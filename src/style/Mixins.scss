@@ -8,16 +8,129 @@
 }
 
 @mixin mobileLandscape {
-    @media (min-width: #{$bp-smaller-landscapeWidth}) {
+    @media (min-width: #{$bp-smaller-landscapeWidth}) and (orientation: landscape) {
         @content;
     }
 }
 
 @mixin desktopLandscape {
-    @media (min-width: #{$bp-small-landscapeWidth}) {
+    @media (min-width: #{$bp-small-landscapeWidth}) and (orientation: landscape) {
         @content;
     }
 }
+
+
+/* Portrait Mixins */
+
+@mixin font-sizePortrait($min, $max) {
+    font-size: calc(#{$min}rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+}
+
+@mixin line-heightPortrait($min, $max) {
+    font-size: calc(#{$min}rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+}
+
+@mixin margin-leftPortrait($min, $max) {
+    margin-left: calc(#{$min}rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+}
+
+@mixin padding-leftPortrait($min, $max) {
+    margin-left: calc(#{$min}rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+}
+
+@mixin paddingPortrait($minTopBottom, $maxTopBottom, $minLeftRight, $maxLeftRight) {
+    padding: calc(#{$minTopBottom}rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * ($maxTopBottom - $minTopBottom)) calc(#{$minLeftRight}rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * ($maxLeftRight - $minLeftRight));
+}
+
+@mixin width-heightPortrait($min, $max) {
+    width: calc(#{$min}rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    height: calc(#{$min}rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+}
+
+@mixin widthPortrait($min, $max) {
+    width: calc(#{$min}rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+}
+
+@mixin heightPortrait($min, $max) {
+    width: calc(#{$min}rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+}
+
+@mixin background-sizePortrait($min, $max) {
+    background-size: calc(#{$min}rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (#{$max} - #{$min})) calc(#{$min}rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+}
+
+@mixin border-widthPortrait($min, $max) {
+    border-width: calc(#{$min}rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+}
+
+@mixin topPortrait($min, $max) {
+    top: calc(#{$min}rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+}
+
+/* Portrait Mixins ENDS */
+
+
+
+
+/* Landscape Mixins */
+//arg 1 to bedzie min font size, 2 max font-size, 3 to min line-height, a 4 to max line-height
+@mixin fontLineLandscape($arg...) {
+    @if length($arg==2) {
+        font-size: calc(#{nth($arg, 1)}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{nth($arg, 2)} - #{nth($arg, 1)}));
+    }
+
+    @if length($arg==4) {
+        line-height: calc(#{nth($arg, 3)}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{nth($arg, 4)} - #{nth($arg, 3)}));
+    }
+
+}
+
+@mixin font-sizeLandscape($min, $max) {
+    font-size: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+}
+
+@mixin line-heightLandscape($min, $max) {
+    line-height: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+}
+
+@mixin margin-leftLandscape($min, $max) {
+    margin-left: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+}
+
+@mixin padding-leftLandscape($min, $max) {
+    padding-left: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+}
+
+@mixin paddingLandscape($minTopBottom, $maxTopBottom, $minLeftRight, $maxLeftRight) {
+    padding: calc(#{$minTopBottom}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$maxTopBottom} - #{$minTopBottom})) calc(#{$minLeftRight}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$maxLeftRight} - #{$minLeftRight}));
+}
+
+@mixin width-heightLandscape($min, $max) {
+    width: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    height: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+}
+
+@mixin widthLandscape($min, $max) {
+    width: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+}
+
+@mixin heightLandscape($min, $max) {
+    height: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+}
+
+@mixin background-sizeLandscape($min, $max) {
+    background-size: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min})) calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+}
+
+@mixin border-widthLandscape($min, $max) {
+    border-width: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+}
+
+@mixin topLandscape($min, $max) {
+    top: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+}
+
+/* Landscape Mixins ENDS */
 
 
 
