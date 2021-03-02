@@ -57,6 +57,21 @@
         padding: calc(.8rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (1.92 - .8)) calc(1.5rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (3.6 - 1.5));
     }
 
+    @include mobileLandscape {
+        padding: 3.9062vh 7.96vh;
+    }
+
+    /*     &__itemList {
+        display: none;
+
+        @include mobileLandscape {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+    } */
+
     &__burgerMenu {
         width: 22px;
         height: 11.74px;
@@ -64,6 +79,10 @@
         @include mobilePortrait {
             width: calc(2.2rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (5.28 - 2.2));
             height: calc(1.174rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (2.818 - 1.174));
+        }
+
+        @include mobileLandscape {
+            display: none;
         }
     }
 }
@@ -80,6 +99,11 @@
         border-width: calc(.1rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (.24 - .1));
     }
 
+    @include mobileLandscape {
+        border-width: .232vh;
+        padding: 1.402vh 3.973vh;
+    }
+
     &__companyName {
         display: flex;
         justify-content: center;
@@ -93,6 +117,11 @@
         @include mobilePortrait {
             font-size: calc(1.2rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (2.88 - 1.2));
             line-height: calc(1.6rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (3.885 - 1.6));
+        }
+
+        @include mobileLandscape {
+            font-size: 2.8vh;
+            line-height: 3.8vh;
         }
     }
 
@@ -143,6 +172,22 @@
             height: calc(3.8rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (9.12 - 3.8));
         }
 
+        @include mobileLandscape {
+            //top 261.13px
+            //border: 4.39px
+            //padding 28.56px 24.17px
+            //fs 24.17px
+            //linh 29.46px
+            //width 320.81px
+            //height 83.5px
+            border-width: .305vh;
+            padding: 1.983vh 1.678vh;
+            font-size: 1.678vh;
+            line-height: 2.046vh;
+            width: 22.278vh;
+            height: 5.8vh;
+        }
+
         &:hover {
             cursor: pointer;
         }
@@ -166,6 +211,11 @@
             height: calc(1.6rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (3.84 - 1.6));
             top: 29vh;
         }
+
+        @include mobileLandscape {
+            width: 3.205vh;
+            height: 2.442vh;
+        }
     }
 
     &__triangle {
@@ -178,6 +228,13 @@
             height: calc(1.6rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (3.84 - 1.6));
         }
 
+        @include mobileLandscape {
+            //h 35.16
+            //w 46.14
+            width: 3.205vh;
+            height: 2.442vh;
+        }
+
         &--gold {
             animation: bounceAlpha 1.4s .2s infinite;
         }
@@ -188,6 +245,10 @@
 
             @include mobilePortrait {
                 top: calc(.5rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (1.32 - .5));
+            }
+
+            @include mobileLandscape {
+                top: .89vh;
             }
         }
     }
@@ -211,6 +272,11 @@
         height: calc(12.1rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (29.04 - 12.1));
     }
 
+    @include mobileLandscape {
+        height: 18.46vh;
+        //height: 265.87px;
+    }
+
     &__firstTitle {
         display: flex;
         flex-direction: row;
@@ -230,6 +296,20 @@
             padding-left: calc(1.5rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (16.4 - 1.5));
         }
 
+        @include mobileLandscape {
+            //fs: 79.1px
+            //lh: 96.45px
+            //pl: 957.54px
+            /*             font-size: 5.5vh;
+            line-height: 6.7vh;
+            padding-left: 66.5vh; */
+            //font-size: calc(2.029rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (7.91 - 2.029));
+            //@include font-sizeLandscape(2.029, 7.91);
+            //@include line-heightLandscape(2.473, 7.91);
+            @include fontLineLandscape(2.029, 7.91, 2.473, 7.91);
+            @include padding-leftLandscape(20.244, 95.754);
+        }
+
         &::after {
             content: ' ';
             background-image: url('../svg/shipWheel.svg');
@@ -237,18 +317,37 @@
             height: 37px;
             width: 37px;
             position: relative;
+            /*             top: 100%;
+            transform: translateY(-100%); */
             top: 100%;
             transform: translateY(-100%);
             margin-left: 6px;
-            -webkit-animation: spin 10s linear infinite;
-            -moz-animation: spin 10s linear infinite;
-            animation: spin 10s linear infinite;
+            //-webkit-animation: spin 10s linear infinite;
+            //-moz-animation: spin 10s linear infinite;
+            //animation: spin 10s linear infinite;
 
             @include mobilePortrait {
                 background-size: calc(3.7rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (8.88 - 3.7)) calc(3.7rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (8.88 - 3.7));
                 height: calc(3.7rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (8.88 - 3.7));
                 width: calc(3.7rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (8.88 - 3.7));
                 margin-left: calc(.6rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (1.44 - .6));
+            }
+
+            @include mobileLandscape {
+                //20.85, 20.85 m
+                //3.38 m
+                //81.3
+                //13.18
+                /*                background-size: 5.65vh 5.65vh;
+                width: 5.65vh;
+                height: 5.65vh;
+                margin-left: .915vh; */
+                /*                 top: 0;
+                top: 50%;
+                transform: translateY(-50%); */
+                @include background-sizeLandscape(2.085, 8.13);
+                @include width-heightLandscape(2.085, 8.13);
+                @include margin-leftLandscape(.338, 1.318);
             }
         }
     }
@@ -267,6 +366,11 @@
             font-size: calc(4.8rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (11.52 - 4.8));
             line-height: calc(6.5rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (15.54 - 6.5));
             //font-size: 8.431vh;
+        }
+
+        @include mobileLandscape {
+            font-size: 7.324vh;
+            line-height: 9.88vh;
         }
     }
 }
