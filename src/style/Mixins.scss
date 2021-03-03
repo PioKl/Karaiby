@@ -19,6 +19,12 @@
     }
 }
 
+@mixin desktopMediumLandscape {
+    @media (min-width: #{$bp-medium-landscapeWidth}) and (orientation: landscape) {
+        @content;
+    }
+}
+
 
 /* Portrait Mixins */
 
@@ -85,49 +91,252 @@
 
 }
 
-@mixin font-sizeLandscape($min, $max) {
-    font-size: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+
+@mixin fontLineLandscape2($size, $arg...) {
+    @if($size==mobile) {
+        @if length($arg==2) {
+            font-size: calc(#{nth($arg, 1)}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-small-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{nth($arg, 2)} - #{nth($arg, 1)}));
+        }
+
+        @if length($arg==4) {
+            line-height: calc(#{nth($arg, 3)}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-small-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{nth($arg, 4)} - #{nth($arg, 3)}));
+        }
+    }
+
+    @else if($size==desktop) {
+        @if length($arg==2) {
+            font-size: calc(#{nth($arg, 1)}rem + (((100vw - #{$bp-small-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-small-landscapeWidth/1em * 1.6}))) * (#{nth($arg, 2)} - #{nth($arg, 1)}));
+        }
+
+        @if length($arg==4) {
+            line-height: calc(#{nth($arg, 3)}rem + (((100vw - #{$bp-small-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-small-landscapeWidth/1em * 1.6}))) * (#{nth($arg, 4)} - #{nth($arg, 3)}));
+        }
+    }
 }
 
-@mixin line-heightLandscape($min, $max) {
-    line-height: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+@mixin font-sizeLandscape($size, $min, $max) {
+    @if($size==universal) {
+        font-size: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+
+    @else if($size==mobile) {
+        font-size: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-small-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+
+    @else if($size==desktop) {
+        font-size: calc(#{$min}rem + (((100vw - #{$bp-small-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-small-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+
+    @else if ($size==desktopMedium) {
+        font-size: calc(#{$min}rem + (((100vw - #{$bp-medium-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-medium-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+
 }
 
-@mixin margin-leftLandscape($min, $max) {
-    margin-left: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+@mixin line-heightLandscape($size, $min, $max) {
+    @if($size==universal) {
+        line-height: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+
+    @else if($size==mobile) {
+        line-height: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-small-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+
+    @else if($size==desktop) {
+        line-height: calc(#{$min}rem + (((100vw - #{$bp-small-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-small-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+
+    @else if ($size==desktopMedium) {
+        line-height: calc(#{$min}rem + (((100vw - #{$bp-medium-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-medium-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
 }
 
-@mixin padding-leftLandscape($min, $max) {
-    padding-left: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+@mixin margin-leftLandscape($size, $min, $max) {
+
+    @if($size==universal) {
+        margin-left: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+
+    @else if($size==mobile) {
+        margin-left: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-small-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+
+    @else if($size==desktop) {
+        margin-left: calc(#{$min}rem + (((100vw - #{$bp-small-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-small-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+
+    @else if ($size==desktopMedium) {
+        margin-left: calc(#{$min}rem + (((100vw - #{$bp-medium-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-medium-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
 }
 
-@mixin paddingLandscape($minTopBottom, $maxTopBottom, $minLeftRight, $maxLeftRight) {
+@mixin padding-leftLandscape($size, $min, $max) {
+
+    @if($size==universal) {
+        padding-left: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+
+    @else if($size==mobile) {
+        padding-left: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-small-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+
+    @else if($size==desktop) {
+        padding-left: calc(#{$min}rem + (((100vw - #{$bp-small-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-small-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+
+    @else if ($size==desktopMedium) {
+        padding-left: calc(#{$min}rem + (((100vw - #{$bp-medium-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-medium-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+}
+
+@mixin paddingLandscape($size, $minTopBottom, $maxTopBottom, $minLeftRight, $maxLeftRight) {
     padding: calc(#{$minTopBottom}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$maxTopBottom} - #{$minTopBottom})) calc(#{$minLeftRight}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$maxLeftRight} - #{$minLeftRight}));
+
+
+    @if($size==universal) {
+        padding: calc(#{$minTopBottom}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$maxTopBottom} - #{$minTopBottom})) calc(#{$minLeftRight}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$maxLeftRight} - #{$minLeftRight}));
+    }
+
+    @else if($size==mobile) {
+        padding: calc(#{$minTopBottom}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-small-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$maxTopBottom} - #{$minTopBottom})) calc(#{$minLeftRight}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-small-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$maxLeftRight} - #{$minLeftRight}));
+    }
+
+    @else if($size==desktop) {
+        padding: calc(#{$minTopBottom}rem + (((100vw - #{$bp-small-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-small-landscapeWidth/1em * 1.6}))) * (#{$maxTopBottom} - #{$minTopBottom})) calc(#{$minLeftRight}rem + (((100vw - #{$bp-small-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-small-landscapeWidth/1em * 1.6}))) * (#{$maxLeftRight} - #{$minLeftRight}));
+    }
+
+    @else if ($size==desktopMedium) {
+        padding: calc(#{$minTopBottom}rem + (((100vw - #{$bp-medium-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-medium-landscapeWidth/1em * 1.6}))) * (#{$maxTopBottom} - #{$minTopBottom})) calc(#{$minLeftRight}rem + (((100vw - #{$bp-medium-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-medium-landscapeWidth/1em * 1.6}))) * (#{$maxLeftRight} - #{$minLeftRight}));
+    }
 }
 
-@mixin width-heightLandscape($min, $max) {
-    width: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
-    height: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+@mixin width-heightLandscape($size, $min, $max) {
+
+    @if($size==universal) {
+        width: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+        height: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+
+    @else if($size==mobile) {
+        width: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-small-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+        height: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-small-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+
+    @else if($size==desktop) {
+        width: calc(#{$min}rem + (((100vw - #{$bp-small-landscapeWidth/1em*1.6rem}) / (#{$bp-small-landscapeWidth/1em * 1.6} - #{$bp-small-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+        height: calc(#{$min}rem + (((100vw - #{$bp-small-landscapeWidth/1em*1.6rem}) / (#{$bp-small-landscapeWidth/1em * 1.6} - #{$bp-small-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+
+    @else if ($size==desktopMedium) {
+        width: calc(#{$min}rem + (((100vw - #{$bp-medium-landscapeWidth/1em*1.6rem}) / (#{$bp-small-landscapeWidth/1em * 1.6} - #{$bp-medium-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+        height: calc(#{$min}rem + (((100vw - #{$bp-medium-landscapeWidth/1em*1.6rem}) / (#{$bp-small-landscapeWidth/1em * 1.6} - #{$bp-medium-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
 }
 
-@mixin widthLandscape($min, $max) {
-    width: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+@mixin widthLandscape($size, $min, $max) {
+
+    @if($size==universal) {
+        width: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+
+    @else if($size==mobile) {
+        width: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-small-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+
+    @else if($size==desktop) {
+        width: calc(#{$min}rem + (((100vw - #{$bp-small-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-small-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+
+    @else if ($size==desktopMedium) {
+        width: calc(#{$min}rem + (((100vw - #{$bp-medium-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-medium-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
 }
 
-@mixin heightLandscape($min, $max) {
-    height: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+@mixin heightLandscape($size, $min, $max) {
+
+    @if($size==universal) {
+        height: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+
+    @else if($size==mobile) {
+        height: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-small-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+
+    @else if($size==desktop) {
+        height: calc(#{$min}rem + (((100vw - #{$bp-small-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-small-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+
+    @else if ($size==desktopMedium) {
+        height: calc(#{$min}rem + (((100vw - #{$bp-medium-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-medium-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
 }
 
-@mixin background-sizeLandscape($min, $max) {
+@mixin heightLandscape2($size, $min, $max) {
+    @if($size==mobile) {
+        height: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-small-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+
+    @else if($size==desktop) {
+        height: calc(#{$min}rem + (((100vw - #{$bp-small-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-small-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+}
+
+@mixin background-sizeLandscape($size, $min, $max) {
     background-size: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min})) calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+
+    @if($size==universal) {
+        background-size: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min})) calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+
+    @else if($size==mobile) {
+        background-size: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-small-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min})) calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-small-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+
+    @else if($size==desktop) {
+        background-size: calc(#{$min}rem + (((100vw - #{$bp-small-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-small-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min})) calc(#{$min}rem + (((100vw - #{$bp-small-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-small-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+
+    @else if ($size==desktopMedium) {
+        background-size: calc(#{$min}rem + (((100vw - #{$bp-medium-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-medium-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min})) calc(#{$min}rem + (((100vw - #{$bp-medium-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-medium-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
 }
 
-@mixin border-widthLandscape($min, $max) {
-    border-width: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+@mixin border-widthLandscape($size, $min, $max) {
+
+    @if($size==universal) {
+        border-width: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+
+    @else if($size==mobile) {
+        border-width: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-small-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+
+    @else if($size==desktop) {
+        border-width: calc(#{$min}rem + (((100vw - #{$bp-small-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-small-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+
+    @else if ($size==desktopMedium) {
+        border-width: calc(#{$min}rem + (((100vw - #{$bp-medium-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-medium-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
 }
 
-@mixin topLandscape($min, $max) {
-    top: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+@mixin topLandscape($size, $min, $max) {
+
+    @if($size==universal) {
+        top: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+
+    @else if($size==mobile) {
+        top: calc(#{$min}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-small-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+
+    @else if($size==desktop) {
+        top: calc(#{$min}rem + (((100vw - #{$bp-small-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-small-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
+
+    @else if ($size==desktopMedium) {
+        top: calc(#{$min}rem + (((100vw - #{$bp-medium-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-medium-landscapeWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    }
 }
 
 /* Landscape Mixins ENDS */
