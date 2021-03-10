@@ -131,6 +131,10 @@
         @include border-widthLandscape(desktop, .135, .202);
         /*         border-width: .28vh;
         padding: 1.6778vh 4.474vh; */
+        //padding: clamp(.809rem, 1.6778vh, 1.212rem) clamp(2.156rem, 4.474vh, 3.232);
+        padding: .789vw 2.1041vw;
+        border-width: .132vw;
+
     }
 
     @include desktopMediumLandscape {
@@ -170,6 +174,8 @@
             @include fontLineLandscape(desktop, 1.617, 2.424, 2.182, 3.27);
             /*             font-size: 3.3555vh;
             line-height: 4.5294vh; */
+            font-size: 1.5781vw;
+            line-height: 2.0964vw;
         }
 
         @include desktopMediumLandscape {
@@ -210,6 +216,7 @@
         @include widthLandscape(desktop, 53.104, 79.6);
         //width: 110.2vh;
         width: 51.83vw;
+        //width: clamp(53.104rem, 110.2vh, 79.6rem);
     }
 
     @include desktopMediumLandscape {
@@ -238,7 +245,10 @@
             @include fontLineLandscape(desktop, 1.617, 2.424, 1.872, 2.805);
             /*             font-size: 3.3555vh;
             line-height: 3.883vh; */
-            //font-size: 1.5781vw;
+            font-size: 1.5781vw;
+            line-height: 1.522vw;
+            //font-size: clamp(1.617rem, 3.3555vh, 2.424rem);
+            //font-size: clamp(1.617rem, 2vw, 2.424rem);
         }
 
         @include desktopMediumLandscape {
@@ -270,6 +280,7 @@
 
     @include desktopLandscape {
         @include widthLandscape(desktop, 12.201, 18.288);
+        //width: 12vw;
     }
 
     @include desktopMediumLandscape {
@@ -288,6 +299,8 @@
 
         @include desktopLandscape {
             @include width-heightLandscape(desktop, 1.927, 2.888);
+            width: 1.883vw;
+            height: 1.883vw;
         }
 
         @include desktopMediumLandscape {
@@ -394,6 +407,13 @@
             @include fontLineLandscape(desktop, 1.488, 1.451, 1.814, 1.769);
             @include widthLandscape(desktop, 19.749, 19.263);
             @include heightLandscape(desktop, 5.14, 5.014);
+
+            /*             border-width: .265vw;
+            padding: 1.7184vw 1.454vw;
+            font-size: 1.454vw;
+            line-height: 1.772vw;
+            width: 19.296vw;
+            height: 4.73vw; */
         }
 
         @include desktopMediumLandscape {
@@ -603,6 +623,7 @@
             /*             padding-left: 37.434vw;
             font-size: 3.1087vw;
             line-height: 3.705vw; */
+            //font-size: 4.758vw;
         }
 
         @include desktopMediumLandscape {
@@ -730,6 +751,8 @@
             line-height: 11.826vh;
             /*             font-size: 4.123vw;
             line-height: 5.562vw; */
+            /*           font-size: 6.343vw;
+            line-height: 8.557vw; */
         }
 
         @include desktopMediumLandscape {
