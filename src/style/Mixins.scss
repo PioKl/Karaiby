@@ -28,6 +28,17 @@
 
 /* Portrait Mixins */
 
+@mixin fontLinePortrait($arg...) {
+    @if length($arg==2) {
+        font-size: calc(#{nth($arg, 1)}rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (#{nth($arg, 2)} - #{nth($arg, 1)}));
+    }
+
+    @if length($arg==4) {
+        line-height: calc(#{nth($arg, 3)}rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (#{nth($arg, 4)} - #{nth($arg, 3)}));
+    }
+
+}
+
 @mixin font-sizePortrait($min, $max) {
     font-size: calc(#{$min}rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (#{$max} - #{$min}));
 }
@@ -41,11 +52,11 @@
 }
 
 @mixin padding-leftPortrait($min, $max) {
-    margin-left: calc(#{$min}rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    padding-left: calc(#{$min}rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (#{$max} - #{$min}));
 }
 
 @mixin paddingPortrait($minTopBottom, $maxTopBottom, $minLeftRight, $maxLeftRight) {
-    padding: calc(#{$minTopBottom}rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * ($maxTopBottom - $minTopBottom)) calc(#{$minLeftRight}rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * ($maxLeftRight - $minLeftRight));
+    padding: calc(#{$minTopBottom}rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (#{$maxTopBottom} - #{$minTopBottom})) calc(#{$minLeftRight}rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (#{$maxLeftRight} - #{$minLeftRight}));
 }
 
 @mixin width-heightPortrait($min, $max) {
@@ -58,7 +69,7 @@
 }
 
 @mixin heightPortrait($min, $max) {
-    width: calc(#{$min}rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (#{$max} - #{$min}));
+    height: calc(#{$min}rem + (((100vw - #{$bp-small-portraitWidth/1em*1.6rem}) / (#{$bp-large-portraitWidth/1em * 1.6} - #{$bp-small-portraitWidth/1em * 1.6}))) * (#{$max} - #{$min}));
 }
 
 @mixin background-sizePortrait($min, $max) {
@@ -388,6 +399,37 @@
                                                     Landscape Mixins ENDS
 ============================================================================================================================== */
 
+@mixin sectionBanner($width, $height, $border, $fontSize, $lineHeight, $content) {
+    @include absoluteCenter;
+    @include flex-center;
+    width: $width;
+    height: $height;
+    background: rgba(134, 112, 112, 0.76);
+    border: $border solid #FFFFFF;
+    color: white;
+
+    &::after {
+        content: "#{$content}";
+        font-size: $fontSize;
+        line-height: $lineHeight;
+        font-family: $fontAbril;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+}
+
+@mixin absoluteCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin flex-spaceBetweenCenter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 
 
