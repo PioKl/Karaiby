@@ -1,0 +1,89 @@
+@import './App.scss';
+
+.history {
+    background-color: $white;
+
+    &__content {
+        @include flex-center();
+        flex-direction: column;
+        padding: 4.8345vh 0;
+
+        @include mobileLandscape {
+            padding: 2.641vw 0;
+        }
+    }
+
+    &__main {
+        @include flex-center();
+        flex-direction: column;
+
+        @include mobileLandscape {
+            flex-direction: row-reverse;
+            margin-bottom: 4.62vw;
+        }
+    }
+
+    &__footer {
+        width: 31.34vh;
+        height: 23.512vh;
+
+        @include mobileLandscape {
+            width: 16.055vw;
+            height: 12.047vw;
+        }
+    }
+}
+
+.historyMap {
+    width: 40.67vh;
+    height: 26.94vh;
+    border-bottom: .176vh solid black;
+    padding-bottom: 2.993vh;
+    margin-bottom: 2.993vh;
+    box-sizing: initial;
+
+    @include mobileLandscape {
+        padding-bottom: 0;
+        border-width: 0;
+        margin-bottom: 0;
+        width: 28.781vw;
+        height: 19.081vw;
+    }
+}
+
+.historyInfo {
+    width: 38.56vh;
+    height: 40.141vh;
+
+    @include mobileLandscape {
+        width: 39.78vw;
+        height: 16.246vw;
+        margin-right: 9.3134vw;
+    }
+
+    &__title {
+        font-family: $fontAbril;
+        font-weight: 400;
+        font-size: 2.82vh;
+        line-height: 3.7993vh;
+        margin-bottom: 1.41vh;
+
+        @include mobileLandscape {
+            font-size: 2.3433vw;
+            line-height: 3.162vw;
+            margin-bottom: 1.6638vw;
+        }
+    }
+
+    &__informations {
+        font-family: $fontGentium;
+        font-weight: 400;
+        font-size: 2.113vh;
+        line-height: 3.132vh;
+
+        @include mobileLandscape {
+            font-size: 1.0828vw;
+            line-height: 2.29vw;
+        }
+    }
+}
