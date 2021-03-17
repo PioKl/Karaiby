@@ -4,10 +4,9 @@ const HistoryBanner = () => {
     return (
         <>
             <div className="historyBanner">
-                <div className="sectionTitle">
+                <div className="historyBanner__sectionTitle">
                 </div>
             </div>
-            <div className="bla"></div>
         </>
     );
 }
