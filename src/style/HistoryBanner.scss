@@ -3,72 +3,23 @@
 .historyBanner {
     position: relative;
     width: 100%;
-    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 46.67%, rgba(255, 231, 231, 0) 46.68%, #F4F2F3 100%), url("../images/historyBannerBackground2.png");
+    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 46.67%, rgba(255, 231, 231, 0) 46.68%, #F4F2F3 100%), url("../images/historyBannerBackground.png");
     background-size: cover;
-    /*     background-repeat: no-repeat;
-    //background-size: cover;
-    //background-position: center;
-    background-size: 100% 100%;
-    background-attachment: fixed; */
-
-    @include mobilePortrait {
-        height: 31.52vh;
-    }
+    height: 31.52vh;
 
     @include mobileLandscape {
         background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 46.67%, rgba(255, 231, 231, 0) 46.68%, #F4F2F3 100%), url("../images/historyBannerBackgroundLandscape.png");
-        //height: 249.76px;
-        //height: 32.522vh;
         height: 24.391vw;
         background-size: cover;
     }
 
-}
-
-.sectionTitle {
-
-    /*     @include absoluteCenter;
-    @include flex-center;
-    height: 8.938vh;
-    width: 33.614vh;
-    border: .388vh solid #FFFFFF;*/
-    /*     &__title {
-        font-family: $fontAbril;
-        font-weight: 400;
-        font-size: 4.176vh;
-        line-height: 5.634vh;
-        text-transform: uppercase;
-    } */
-    @include mobilePortrait {
+    &__sectionTitle {
         @include sectionBanner(33.614vh, 8.938vh, .388vh, 4.176vh, 5.634vh, historia);
+
+        @include mobileLandscape {
+            @include sectionBanner(22.5vw, 5.98vw, .2601vw, 2.7952vw, 3.809vw, historia);
+        }
+
+
     }
-
-    @include mobileLandscape {
-        /*         width: 230.44px;
-        width: 30vh;
-        width: 22.5vw;
-        height: 61.27px;
-        height: 7.98vh;
-        height: 5.98vw;
-        border: 2.66px solid white;
-        border: .347vh solid white;
-        border: .2601vw solid white;
-        font-family: Abril Fatface;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 28.6224px;
-        font-size: 3.7269vh;
-        font-size: 2.7952vw;
-        line-height: 39px;
-        line-height: 5.09vh;
-        line-height: 3.809vw; */
-        //@include sectionBanner(20vh)
-        @include sectionBanner(22.5vw, 5.98vw, .2601vw, 2.7952vw, 3.809vw, historia);
-    }
-
-
-}
-
-.bla {
-    height: 500px;
 }
