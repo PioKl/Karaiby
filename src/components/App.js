@@ -1,6 +1,8 @@
 import '../style/App.scss';
 import Header from './Header';
 import HistoryBanner from './HistoryBanner';
+import History from './History';
+import WorthOfSeeingBanner from './WorthOfSeeingBanner';
 
 function App() {
   return (
@@ -8,6 +10,8 @@ function App() {
       <Header />
       <main>
         <HistoryBanner />
+        <History />
+        <WorthOfSeeingBanner />
       </main>
       <footer>
 
