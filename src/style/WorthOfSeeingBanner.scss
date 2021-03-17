@@ -1,0 +1,24 @@
+@import './App.scss';
+
+.worthOfSeeingBanner {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(180deg, #F4F2F3 0%, rgba(244, 242, 243, 0) 55.52%, rgba(34, 53, 41, 0.48) 73.75%, #0B0D0C 100%), url("../images/worthOfSeeingBackground.png");
+    background-size: cover;
+    height: 31.52vh;
+
+    @include mobileLandscape {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 76.87%, #060907 100%), linear-gradient(180deg, #F4F2F3 0%, rgba(244, 242, 243, 0) 55.52%, rgba(34, 53, 41, 0.48) 73.75%, #000000 100%), url("../images/worthOfSeeingBackgroundLandscape.png");
+        height: 35.26vw;
+        background-size: cover;
+    }
+
+    &__sectionTitle {
+        //50.7261vh
+        @include sectionBanner(45.7261vh, 8.938vh, .388vh, 4.176vh, 5.634vh, Warto Zobaczyć);
+
+        @include mobileLandscape {
+            @include sectionBanner(33.99vw, 5.98vw, .2601vw, 2.7952vw, 3.809vw, Warto Zobaczyć);
+        }
+    }
+}
