@@ -3,6 +3,7 @@ import Header from './Header';
 import HistoryBanner from './HistoryBanner';
 import History from './History';
 import WorthOfSeeingBanner from './WorthOfSeeingBanner';
+import WorthOfSeeing from './WorthOfSeeing';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <HistoryBanner />
         <History />
         <WorthOfSeeingBanner />
+        <WorthOfSeeing />
       </main>
       <footer>
 
