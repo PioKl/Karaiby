@@ -9,10 +9,18 @@ const WorthOfSeeing = () => {
             <div className="worthOfSeeing__content">
                 <div className="placeToChoose">
                     <Arrow className="placeToChoose__arrow placeToChoose__arrow--left" />
-                    <div className="imageOfPlaceContainer">
-                        <img src={dominica} alt="dominika" className="imageOfPlaceContainer__image" />
-                        <h1 className="imageOfPlaceContainer__placeTitle">Dominika</h1>
-                        {/* <span className="imageOfPlaceContainer__counter">01/04</span> */}
+                    <div className="imagesOfPlacesContainer">
+                        <div className="imageOfPlaceContainer imageOfPlaceContainer--left">
+                            <img src={dominica} alt="dominika" className="imageOfPlaceContainer__image" />
+                        </div>
+                        <div className="imageOfPlaceContainer imageOfPlaceContainer--middle">
+                            <img src={dominica} alt="dominika" className="imageOfPlaceContainer__image" />
+                            <h1 className="imageOfPlaceContainer__placeTitle">Dominika</h1>
+                            {/* <span className="imageOfPlaceContainer__counter">01/04</span> */}
+                        </div>
+                        <div className="imageOfPlaceContainer imageOfPlaceContainer--right">
+                            <img src={dominica} alt="dominika" className="imageOfPlaceContainer__image" />
+                        </div>
                     </div>
                     <Arrow className="placeToChoose__arrow placeToChoose__arrow--right" />
                 </div>
