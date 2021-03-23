@@ -33,28 +33,23 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
-    //margin: 0 2.6409vh;
-
-    //margin-bottom: 5.2817vh;
     margin-bottom: 2.4648vh;
 
     @include mobileLandscape {
         margin-bottom: .6875vw;
     }
 
-    &__arrow {
-        /*  width: 21px;
-        height: 10.5px; */
-        width: 14px;
-        height: 23px;
+    &__buttonArrow {
+        background: transparent;
+        border: none;
+        outline: none;
+    }
 
+    &__arrow {
         width: 2.4648vh;
         height: 4.05vh;
 
         @include mobileLandscape {
-            /*   width: 2vw;
-            height: 2vw; */
             width: 1vw;
             height: 1.6vw;
         }
@@ -86,10 +81,6 @@
 
     @include mobileLandscape {
         @include flex-center();
-        width: 614.46px;
-        height: 401.71px;
-        margin: 0 19.44px;
-
         width: 40.004vw;
         height: 26.153vw;
         margin: 0 1.26563vw;
@@ -99,27 +90,20 @@
 
 .imageOfPlaceContainer {
     position: relative;
-    /*     width: 240px;
-    height: 369px; */
-    //height: auto;
-    //margin: 0 15px;
-    /*     width: 42.254vh;
-    height: 64.965vh; */
-    /*     width: 42.254vh;
-    height: 64.965vh;
-    margin: 0 2.6409vh; */
     width: inherit;
     height: inherit;
 
     &--middle {
         @include mobileLandscape {
-            width: 261.28px;
-            height: 401.71px;
-
             width: 17.0101vw;
             height: 26.153vw;
             z-index: 100;
         }
+    }
+
+    &--left,
+    &--right {
+        cursor: pointer;
     }
 
     &--left {
@@ -128,12 +112,6 @@
         @include mobileLandscape {
             display: initial;
             position: absolute;
-            width: 206.42px;
-            height: 317.37px;
-            //left: 57px;
-            //left: 29.68px;
-            left: 36px;
-
             width: 13.4392vw;
             height: 20.666vw;
             left: 2.34375vw;
@@ -146,12 +124,6 @@
         @include mobileLandscape {
             display: initial;
             position: absolute;
-            width: 206.42px;
-            height: 317.37px;
-            //right: 57px;
-            right: 36px;
-
-
             width: 13.4392vw;
             height: 20.666vw;
             right: 2.34375vw;
@@ -161,9 +133,6 @@
     &__image {
         width: 100%;
         height: 100%;
-        //margin-bottom: 14px;
-
-        //margin-bottom: 2.4648vh;
     }
 
     &__placeTitle {
@@ -171,32 +140,15 @@
         color: white;
         font-family: $fontAbril;
         font-weight: 400;
-        font-size: 32px;
-        line-height: 43.17px;
         text-transform: uppercase;
-
         font-size: 5.6338vh;
         line-height: 7.6vh;
 
         @include mobileLandscape {
-            //34.84px font
-            //47px line
             font-size: 2.26823vw;
             line-height: 3.0599vw;
         }
     }
-
-    /*     &__counter {
-        color: white;
-        font-family: $fontAbril;
-        font-weight: 400;
-        font-size: 10px;
-        line-height: 13.49px;
-        display: inline-block;
-        position: relative;
-        left: 100%;
-        transform: translateX(-100%);
-    } */
 }
 
 .moveDownToNextSection {
@@ -205,10 +157,6 @@
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    //margin-top: 30px;
-    //width: 2.1rem;
-    //height: 1.6rem;
-
     margin-top: 5.2817vh;
     width: 3.698vh;
     height: 2.817vh;
@@ -220,9 +168,6 @@
     }
 
     &__triangle {
-        width: 2.1rem;
-        height: 1.6rem;
-
         width: 3.698vh;
         height: 2.817vh;
 
@@ -237,7 +182,6 @@
 
         &--second {
             position: absolute;
-            top: .5rem;
             top: .8803vh;
             @include bounceAnimation(0);
 
@@ -246,77 +190,22 @@
             }
         }
     }
-
-    //margin-top: 30px;
-
-    /*     position: relative;
-    left: 50%;
-    width: 2.1rem;
-    height: 1.6rem;
-    transform: translateX(-50%); */
-
 }
 
 .placeToChooseCounter {
     display: flex;
     justify-content: flex-end;
     align-self: center;
-    width: 240px;
     width: 42.254vh;
     color: white;
     font-family: $fontAbril;
     font-weight: 400;
-    font-size: 10px;
-    line-height: 13.49px;
-    //margin-top: 14px;
-
     font-size: 1.7607vh;
     line-height: 2.375vh;
-    //margin-top: 2.4648vh;
 
     @include mobileLandscape {
-        //font 17.28
-        //line 23.31
         width: 17.0101vw;
         font-size: 1.125vw;
         line-height: 1.51758vw;
     }
 }
-
-/* 
-
-.middle {
-
-    @include mobileLandscape {
-        width: 261px;
-        height: 401px;
-        z-index: 100;
-    }
-
-}
-
-.left {
-    display: none;
-
-    @include mobileLandscape {
-        display: initial;
-        position: absolute;
-        width: 206.42px;
-        height: 317.37px;
-        left: 57px;
-    }
-
-}
-
-.right {
-    display: none;
-
-    @include mobileLandscape {
-        display: initial;
-        position: absolute;
-        width: 206.42px;
-        height: 317.37px;
-        right: 57px;
-    }
-
-} */
