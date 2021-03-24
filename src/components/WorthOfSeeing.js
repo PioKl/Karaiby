@@ -33,14 +33,21 @@ const WorthOfSeeing = () => {
                     <button onClick={handlePreviousImage} className="placeToChoose__buttonArrow"><Arrow className="placeToChoose__arrow placeToChoose__arrow--left" /></button>
                     <div className="imagesOfPlacesContainer">
                         <div className="imageOfPlaceContainer imageOfPlaceContainer--left">
-                            <img onClick={handlePreviousImage} src={gallery[imageCounter]} alt="zdjęcie miejsca" className="imageOfPlaceContainer__image" />
+                            <img onClick={handleNextImage} src={gallery[imageCounter > 0 ? (gallery.length - imageCounter) : 0]} alt="zdjęcie miejsca" className="imageOfPlaceContainer__image" />
                         </div>
                         <div className="imageOfPlaceContainer imageOfPlaceContainer--middle">
-                            <img src={gallery[`${imageCounter + (imageCounter >= 2 ? -2 : 1)}`]} alt="zdjęcie miejsca" className="imageOfPlaceContainer__image" />
-                            <h1 className="imageOfPlaceContainer__placeTitle">{placeName[`${imageCounter + (imageCounter >= 2 ? -2 : 1)}`]}</h1>
+                            {/*                             <img onClick={handlePreviousImage} src={gallery[imageCounter > 0 ? (0 + imageCounter - 1) : 1]} alt="zdjęcie miejsca" className="imageOfPlaceContainer__image" /> */}
+                            {/*                             <img onClick={handlePreviousImage} src={gallery[imageCounter > 0 ? imageCounter === 2 ? 3 : (0 + imageCounter - 1) : 1]} alt="zdjęcie miejsca" className="imageOfPlaceContainer__image" /> */}
+                            <img onClick={handlePreviousImage} src={gallery[imageCounter > 0 ? imageCounter > 1 ? (gallery.length - 1 - imageCounter + 2) : 0 : 1]} alt="zdjęcie miejsca" className="imageOfPlaceContainer__image" />
+
+                            {/*                             <img src={gallery[`${imageCounter + (imageCounter >= 2 ? -2 : 1)}`]} alt="zdjęcie miejsca" className="imageOfPlaceContainer__image" /> */}
+                            <h1 className="imageOfPlaceContainer__placeTitle">{placeName[`${imageCounter > 0 ? imageCounter > 1 ? (gallery.length - 1 - imageCounter + 2) : 0 : 1}`]}</h1>
+                            {/*                             <h1 className="imageOfPlaceContainer__placeTitle">{placeName[`${imageCounter + (imageCounter >= 2 ? -2 : 1)}`]}</h1> */}
                         </div>
                         <div className="imageOfPlaceContainer imageOfPlaceContainer--right">
-                            <img onClick={handleNextImage} src={gallery[`${imageCounter + (imageCounter >= 1 ? -1 : 2)}`]} alt="zdjęcie miejsca" className="imageOfPlaceContainer__image" />
+                            <img onClick={handlePreviousImage} src={gallery[imageCounter > 0 ? imageCounter > 1 ? imageCounter > 2 ? (gallery.length - 1 - imageCounter + 3) : 0 : 1 : 2]} alt="zdjęcie miejsca" className="imageOfPlaceContainer__image" />
+                            {/*       <img onClick={handlePreviousImage} src={gallery[imageCounter > 0 ? imageCounter === 2 ? 0 : (0 + imageCounter) : 2]} alt="zdjęcie miejsca" className="imageOfPlaceContainer__image" /> */}
+                            {/*                             <img onClick={handleNextImage} src={gallery[`${imageCounter + (imageCounter >= 1 ? -1 : 2)}`]} alt="zdjęcie miejsca" className="imageOfPlaceContainer__image" /> */}
                         </div>
                     </div>
                     <button onClick={handleNextImage} className="placeToChoose__buttonArrow"><Arrow className="placeToChoose__arrow placeToChoose__arrow--right" /></button>
