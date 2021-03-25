@@ -1,0 +1,136 @@
+@import './App.scss';
+
+.pickedPlace {
+    //background: url("../images/dominicaBackground.png");
+    background: linear-gradient(180deg, #111E1C 0%, rgba(4, 7, 6, 0) 86.25%, #000000 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../images/dominicaBackground.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    //height: 628px;
+    //margin-top: -.3vh;
+
+    &__content {
+        @include flex-center();
+        flex-direction: column;
+        padding: 86px 0;
+        padding: 15.141vh 0;
+    }
+
+    &__footer {
+        width: 143.54px;
+        height: 77.29px;
+        width: 25.271vh;
+        height: 13.61vh;
+        background-color: yellow;
+    }
+}
+
+.galleryOfPickedPlace {
+    position: relative;
+    height: 181px;
+    width: 269.02px;
+    height: 31.868vh;
+    width: 47.362vh;
+    background-color: gray;
+    margin-bottom: 30px;
+    margin-bottom: 5.282vh;
+
+    &__img {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__counter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 0%;
+        right: 0%;
+        color: white;
+        background: rgba(0, 0, 0, 0.61);
+        width: 31.21px;
+        height: 19px;
+        width: 5.496vh;
+        height: 3.346vh;
+        font-family: $fontMontserrat;
+        font-weight: 400;
+        font-size: 8.82px;
+        line-height: 10.75px;
+        font-size: 1.55282vh;
+        line-height: 1.893vh;
+    }
+}
+
+.galleryButton {
+    position: absolute;
+    outline: none;
+    border: none;
+    background-color: #EBAC00;
+    border-bottom-left-radius: 90px;
+    border-top-left-radius: 90px;
+    height: 47px;
+    width: 24.72px;
+
+    height: 8.275vh;
+    width: 4.353vh;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    &--right {
+        right: 0%;
+    }
+
+    &--left {
+        transform: translateY(-50%) rotate(180deg);
+    }
+
+    &:active>&__arrow {
+        transform: scale(1.1) rotate(180deg);
+    }
+
+    &__arrow {
+        width: 1.5rem;
+        height: 1.5rem;
+
+        width: 2.641vh;
+        height: 2.641vh;
+
+        cursor: pointer;
+
+        &--left {
+            transform: rotate(180deg);
+        }
+
+        &--right {
+            transform: rotate(180deg);
+        }
+    }
+
+
+}
+
+
+.pickedPlaceInfo {
+    width: 269px;
+    height: 210px;
+    background-color: red;
+    margin-bottom: 30px;
+    margin-bottom: 5.282vh;
+}
+
+
+
+
+/* .dada {
+    background-color: yellow;
+    border-bottom-left-radius: 90px;
+    border-top-left-radius: 90px;
+    height: 10vh;
+    width: 5vh;
+} */
