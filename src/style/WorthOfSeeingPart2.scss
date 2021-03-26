@@ -9,31 +9,59 @@
     //height: 628px;
     //margin-top: -.3vh;
 
+    @include mobileLandscape {
+        background: linear-gradient(180deg, #0C211F 0%, rgba(4, 7, 6, 0) 86.25%, #000000 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../images/dominicaBackgroundLandscape.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
     &__content {
+        @include flex-center(); //tutaj tez center dla footera
+        flex-direction: column;
+        padding: 15.141vh 0;
+
+        @include mobileLandscape {
+            padding: 7.227vw 0;
+        }
+    }
+
+    &__main {
         @include flex-center();
         flex-direction: column;
-        padding: 86px 0;
-        padding: 15.141vh 0;
+
+        @include mobileLandscape {
+            flex-direction: row-reverse;
+            margin-bottom: 5.641vw;
+        }
     }
 
     &__footer {
-        width: 143.54px;
-        height: 77.29px;
         width: 25.271vh;
         height: 13.61vh;
-        background-color: yellow;
+
+        @include mobileLandscape {
+            width: 17.362vw;
+            height: 9.351vw;
+        }
+    }
+
+    &__map {
+        width: inherit;
+        height: inherit;
     }
 }
 
 .galleryOfPickedPlace {
     position: relative;
-    height: 181px;
-    width: 269.02px;
     height: 31.868vh;
     width: 47.362vh;
-    background-color: gray;
-    margin-bottom: 30px;
     margin-bottom: 5.282vh;
+
+    @include mobileLandscape {
+        margin-bottom: 0;
+        width: 32.364vw;
+        height: 20.6383vw;
+    }
 
     &__img {
         width: 100%;
@@ -41,49 +69,50 @@
     }
 
     &__counter {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex-center();
         position: absolute;
         bottom: 0%;
         right: 0%;
         color: white;
         background: rgba(0, 0, 0, 0.61);
-        width: 31.21px;
-        height: 19px;
         width: 5.496vh;
         height: 3.346vh;
         font-family: $fontMontserrat;
         font-weight: 400;
-        font-size: 8.82px;
-        line-height: 10.75px;
         font-size: 1.55282vh;
         line-height: 1.893vh;
+
+        @include mobileLandscape {
+            width: 4.263vw;
+            height: 2.456vw;
+            font-size: 1.1391vw;
+            line-height: 1.3891vw;
+        }
     }
 }
 
 .galleryButton {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     position: absolute;
     outline: none;
     border: none;
     background-color: #EBAC00;
     border-bottom-left-radius: 90px;
     border-top-left-radius: 90px;
-    height: 47px;
-    width: 24.72px;
-
     height: 8.275vh;
     width: 4.353vh;
-
     top: 50%;
     transform: translateY(-50%);
 
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    @include mobileLandscape {
+        width: 3.662vw;
+        height: 6.585vw;
+    }
 
     &--right {
-        right: 0%;
+        right: -.1%;
     }
 
     &--left {
@@ -95,13 +124,14 @@
     }
 
     &__arrow {
-        width: 1.5rem;
-        height: 1.5rem;
-
+        cursor: pointer;
         width: 2.641vh;
         height: 2.641vh;
 
-        cursor: pointer;
+        @include mobileLandscape {
+            width: 2.126vw;
+            height: 2.126vw;
+        }
 
         &--left {
             transform: rotate(180deg);
@@ -117,20 +147,149 @@
 
 
 .pickedPlaceInfo {
-    width: 269px;
-    height: 210px;
-    background-color: red;
-    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 47.362vh;
+    height: 36.972vh;
     margin-bottom: 5.282vh;
+
+    @include mobileLandscape {
+        margin-bottom: 0;
+        margin-right: 6.1902vw;
+        width: 37.726vw;
+        height: auto;
+    }
+
+    &__informations {
+        margin-bottom: 2.817vh;
+        font-family: $fontMontserrat;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 2.289vh;
+        line-height: 2.817vh;
+        color: white;
+        width: 47.008vh;
+        height: 19.72vh;
+
+        @include mobileLandscape {
+            margin-bottom: 1.669vw;
+            width: 37.725vw;
+            height: auto;
+            font-size: 1.2025vw;
+            line-height: 2.5388vw;
+        }
+    }
+
+    &__moreButton {
+        cursor: pointer;
+        width: 16.03vh;
+        height: 4.402vh;
+        font-family: $fontMontserrat;
+        font-weight: 700;
+        font-size: 2.289vh;
+        line-height: 2.7905vh;
+        border: none;
+        color: white;
+        background-color: #EBAC00;
+
+        @include mobileLandscape {
+            width: 9.712vw;
+            height: 2.311vw;
+            line-height: 1.46127vw;
+            font-size: 1.2025vw;
+        }
+
+        &:hover {
+            border: .354vh solid white;
+
+            @include mobileLandscape {
+                border-width: .353vw;
+            }
+        }
+
+        &:active {
+            transform: scale(1.05);
+        }
+    }
 }
 
+.pickedPlaceTitleContainer {
+    @include flex-spaceBetweenCenter();
+    flex-direction: row;
+
+    margin-bottom: 2.4648vh;
+
+    @include mobileLandscape {
+        margin-bottom: 1.29402vw;
+    }
 
 
+    &__title {
+        margin-left: .7043vh;
+        font-family: $fontAbril;
+        font-weight: 400;
+        font-size: 5.6338vh;
+        line-height: 7.6004vh;
+        color: white;
 
-/* .dada {
-    background-color: yellow;
-    border-bottom-left-radius: 90px;
-    border-top-left-radius: 90px;
-    height: 10vh;
-    width: 5vh;
-} */
+        @include mobileLandscape {
+            font-size: 2.958vw;
+            line-height: 3.9912vw;
+        }
+    }
+}
+
+.pickedPlaceSliderControl {
+    @include flex-center();
+    flex-direction: row;
+
+    @include mobileLandscape {
+        margin-right: 1.53873vw;
+    }
+
+    &__buttonArrow {
+        width: 2.606vh;
+        height: 2.958vh;
+        @include buttonReset();
+
+        @include mobileLandscape {
+            display: flex;
+            width: 1.574vw;
+            height: 1.725vw;
+        }
+    }
+
+    &__arrow {
+        width: inherit;
+        height: inherit;
+
+        cursor: pointer;
+
+        &:active {
+            transform: scale(1.1);
+        }
+
+        &--right {
+            transform: rotate(180deg);
+
+            &:active {
+                transform: rotate(180deg) scale(1.1);
+            }
+        }
+    }
+
+    &__counter {
+        margin: 0 1.03vh;
+        font-family: $fontMontserrat;
+        font-weight: 400;
+        font-size: 1.53vh;
+        line-height: 1.8644vh;
+        color: white;
+
+        @include mobileLandscape {
+            margin: 0 .62148vw;
+            font-size: .9243vw;
+            line-height: 1.12676vw;
+        }
+    }
+}
