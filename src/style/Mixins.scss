@@ -398,6 +398,11 @@
 /* =============================================================================================================================
                                                     Landscape Mixins ENDS
 ============================================================================================================================== */
+@mixin buttonReset {
+    background: transparent;
+    border: none;
+    outline: none;
+}
 
 @mixin sectionBanner($width, $height, $border, $fontSize, $lineHeight, $content) {
     @include absoluteCenter;
