@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '../style/WorthOfSeeingPart2.scss';
 import dominicaGallery1 from "../images/dominicaGallery1.png";
 import { ReactComponent as Arrow } from '../svg/arrow.svg';
 import { ReactComponent as ArrowAlternate } from '../svg/arrowAlternate.svg';
 import { ReactComponent as DominicaMap } from '../svg/dominicaMap.svg';
+import { WorthOfSeeingContext } from "../contexts/WorthOfSeeingContext";
 const WorthOfSeeingPart2 = () => {
-    const gallery1 = { dominicaGallery1 };
+    const { imageCounter, gallery, placeName, handleNextImage, handlePreviousImage } = useContext(WorthOfSeeingContext)
     return (
         <>
-            <div className="pickedPlace">
+            <div className={`pickedPlace pickedPlace--${placeName[imageCounter].toLowerCase()}`}>
                 <div className="pickedPlace__content">
                     <div className="pickedPlace__main">
                         <div className="galleryOfPickedPlace">
@@ -23,11 +24,11 @@ const WorthOfSeeingPart2 = () => {
                         </div>
                         <div className="pickedPlaceInfo">
                             <div className="pickedPlaceTitleContainer">
-                                <h1 className="pickedPlaceTitleContainer__title">Dominika</h1>
+                                <h1 className="pickedPlaceTitleContainer__title">{placeName[imageCounter]}</h1>
                                 <div className="pickedPlaceSliderControl">
-                                    <button className="pickedPlaceSliderControl__buttonArrow"><ArrowAlternate className="pickedPlaceSliderControl__arrow pickedPlaceSliderControl__arrow--left" /></button>
-                                    <span className="pickedPlaceSliderControl__counter">01/04</span>
-                                    <button className="pickedPlaceSliderControl__buttonArrow"><ArrowAlternate className="pickedPlaceSliderControl__arrow pickedPlaceSliderControl__arrow--right" /></button>
+                                    <button onClick={handlePreviousImage} className="pickedPlaceSliderControl__buttonArrow"><ArrowAlternate className="pickedPlaceSliderControl__arrow pickedPlaceSliderControl__arrow--left" /></button>
+                                    <span className="pickedPlaceSliderControl__counter">0{imageCounter + 1}/0{gallery.length}</span>
+                                    <button onClick={handleNextImage} className="pickedPlaceSliderControl__buttonArrow"><ArrowAlternate className="pickedPlaceSliderControl__arrow pickedPlaceSliderControl__arrow--right" /></button>
                                 </div>
                             </div>
 
