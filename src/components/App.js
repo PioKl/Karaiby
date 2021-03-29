@@ -5,6 +5,7 @@ import History from './History';
 import WorthOfSeeingBanner from './WorthOfSeeingBanner';
 import WorthOfSeeing from './WorthOfSeeing';
 import WorthOfSeeingPart2 from './WorthOfSeeingPart2';
+import WorthOfSeeingContextProvider from "../contexts/WorthOfSeeingContext";
 
 function App() {
   return (
@@ -14,8 +15,10 @@ function App() {
         <HistoryBanner />
         <History />
         <WorthOfSeeingBanner />
-        <WorthOfSeeing />
-        <WorthOfSeeingPart2 />
+        <WorthOfSeeingContextProvider>
+          <WorthOfSeeing />
+          <WorthOfSeeingPart2 />
+        </WorthOfSeeingContextProvider>
       </main>
       <footer>
 
