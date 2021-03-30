@@ -280,6 +280,7 @@
 
     &__counter {
         margin: 0 1.03vh;
+        width: 4.205vh;
         font-family: $fontMontserrat;
         font-weight: 400;
         font-size: 1.53vh;
@@ -287,6 +288,10 @@
         color: white;
 
         @include mobileLandscape {
+            //36.2375px
+            //width: 2.36vw;
+            text-align: center;
+            width: 3vw;
             margin: 0 .62148vw;
             font-size: .9243vw;
             line-height: 1.12676vw;
