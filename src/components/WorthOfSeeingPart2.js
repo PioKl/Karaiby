@@ -1,26 +1,25 @@
 import React, { useContext } from 'react';
 import '../style/WorthOfSeeingPart2.scss';
-import dominicaGallery1 from "../images/dominicaGallery1.png";
 import { ReactComponent as Arrow } from '../svg/arrow.svg';
 import { ReactComponent as ArrowAlternate } from '../svg/arrowAlternate.svg';
 import { ReactComponent as DominicaMap } from '../svg/dominicaMap.svg';
 import { WorthOfSeeingContext } from "../contexts/WorthOfSeeingContext";
 const WorthOfSeeingPart2 = () => {
-    const { imageCounter, gallery, placeName, handleNextImage, handlePreviousImage } = useContext(WorthOfSeeingContext)
+    const { imageCounter, gallery, placeName, handleNextImage, handlePreviousImage, galleryOfPickedPlace, imageCounterOfPickedPlace, handlePreviousImageOfPickedPlace, handleNextImageOfPickedPlace } = useContext(WorthOfSeeingContext)
     return (
         <>
             <div className={`pickedPlace pickedPlace--${placeName[imageCounter].toLowerCase()}`}>
                 <div className="pickedPlace__content">
                     <div className="pickedPlace__main">
                         <div className="galleryOfPickedPlace">
-                            <button className="galleryButton galleryButton--left">
+                            <button onClick={handlePreviousImageOfPickedPlace} className="galleryButton galleryButton--left">
                                 <Arrow className="galleryButton__arrow galleryButton__arrow--left" />
                             </button>
-                            <img className="galleryOfPickedPlace__img" src={dominicaGallery1} alt="" />
-                            <button className="galleryButton galleryButton--right">
+                            <img className="galleryOfPickedPlace__img" src={galleryOfPickedPlace[imageCounter][imageCounterOfPickedPlace]} alt="" />
+                            <button onClick={handleNextImageOfPickedPlace} className="galleryButton galleryButton--right">
                                 <Arrow className="galleryButton__arrow galleryButton__arrow--right" />
                             </button>
-                            <span className="galleryOfPickedPlace__counter">01/04</span>
+                            <span className="galleryOfPickedPlace__counter">0{imageCounterOfPickedPlace + 1}/0{galleryOfPickedPlace[imageCounter].length}</span>
                         </div>
                         <div className="pickedPlaceInfo">
                             <div className="pickedPlaceTitleContainer">
