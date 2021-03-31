@@ -6,6 +6,7 @@ import WorthOfSeeingBanner from './WorthOfSeeingBanner';
 import WorthOfSeeing from './WorthOfSeeing';
 import WorthOfSeeingPart2 from './WorthOfSeeingPart2';
 import WorthOfSeeingContextProvider from "../contexts/WorthOfSeeingContext";
+import Attractions from "./Attractions";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <WorthOfSeeing />
           <WorthOfSeeingPart2 />
         </WorthOfSeeingContextProvider>
+        <Attractions />
       </main>
       <footer>
 
