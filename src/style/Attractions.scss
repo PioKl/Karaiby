@@ -1,0 +1,28 @@
+@import './App.scss';
+
+.testContainer {
+    padding: 0 15px;
+    padding: 0 2.6409vh;
+    display: grid;
+    //grid-template-columns: repeat(auto-fit, minmax(17rem, 305px));
+    grid-template-columns: repeat(auto-fit, minmax(290px, 696px));
+    gap: 3rem;
+    justify-content: center;
+    background-color: red;
+
+    @include mobileLandscape {
+        grid-template-columns: repeat(auto-fit, minmax(113px, 509px));
+    }
+}
+
+.test {
+    height: 114px;
+    height: 20.071vh;
+
+    @include mobileLandscape {
+        //height: 136.75px;
+        height: 8.903vw;
+    }
+
+    background-color: #fff;
+}
