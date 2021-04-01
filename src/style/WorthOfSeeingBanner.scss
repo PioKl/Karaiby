@@ -15,10 +15,10 @@
 
     &__sectionTitle {
         //50.7261vh
-        @include sectionBanner(45.7261vh, 8.938vh, .388vh, 4.176vh, 5.634vh, Warto Zobaczyć);
+        @include sectionBanner(45.7261vh, 8.938vh, .388vh, 4.176vh, 5.634vh, Warto Zobaczyć, yes);
 
         @include mobileLandscape {
-            @include sectionBanner(33.99vw, 5.98vw, .2601vw, 2.7952vw, 3.809vw, Warto Zobaczyć);
+            @include sectionBanner(33.99vw, 5.98vw, .2601vw, 2.7952vw, 3.809vw, Warto Zobaczyć, yes);
         }
     }
 }
