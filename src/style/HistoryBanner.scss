@@ -14,10 +14,10 @@
     }
 
     &__sectionTitle {
-        @include sectionBanner(33.614vh, 8.938vh, .388vh, 4.176vh, 5.634vh, historia);
+        @include sectionBanner(33.614vh, 8.938vh, .388vh, 4.176vh, 5.634vh, historia, yes);
 
         @include mobileLandscape {
-            @include sectionBanner(22.5vw, 5.98vw, .2601vw, 2.7952vw, 3.809vw, historia);
+            @include sectionBanner(22.5vw, 5.98vw, .2601vw, 2.7952vw, 3.809vw, historia, yes);
         }
 
 
