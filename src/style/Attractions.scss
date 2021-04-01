@@ -1,28 +1,99 @@
 @import './App.scss';
 
-.testContainer {
-    padding: 0 15px;
-    padding: 0 2.6409vh;
-    display: grid;
-    //grid-template-columns: repeat(auto-fit, minmax(17rem, 305px));
-    grid-template-columns: repeat(auto-fit, minmax(290px, 696px));
-    gap: 3rem;
-    justify-content: center;
-    background-color: red;
+.attractions {
+    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.13) 14.9%), linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #08211C 100%), url("../images//attractionsBackground.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
 
     @include mobileLandscape {
-        grid-template-columns: repeat(auto-fit, minmax(113px, 509px));
+        background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.13) 14.9%), linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #08211C 100%), url("../images//attractionsBackgroundLandscape.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    &__banner {
+        margin-top: 3.522vh;
+        margin-bottom: 6.55633vh;
+        @include sectionBanner(34.863vh, 8.935vh, .388vh, 4.1761vh, 5.6321vh, atrakcje, no);
+
+        @include mobileLandscape {
+            @include sectionBanner(23.438vw, 5.99vw, .261vw, 2.7982vw, 3.7741vw, atrakcje, no);
+            margin-top: 4.2969vw;
+            margin-bottom: 6.25vw;
+        }
     }
 }
 
-.test {
-    height: 114px;
-    height: 20.071vh;
+.attractionsList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3.5212vh;
+    margin-bottom: 18.6883vh;
+    color: white;
 
     @include mobileLandscape {
-        //height: 136.75px;
-        height: 8.903vw;
+        gap: 6.3965vw 2.7344vw;
+        margin-bottom: 10.6283vw;
     }
 
-    background-color: #fff;
+    &__item {
+        display: flex;
+        flex-direction: column;
+        width: 51.057vh;
+        height: auto;
+
+        @include mobileLandscape {
+            width: 19.917vw;
+        }
+    }
+
+    &__attraction {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    &__attractionIcon {
+        margin-right: 1.05634vh;
+        width: 7.923vh;
+        height: 7.923vh;
+
+        @include mobileLandscape {
+            margin-right: .412103vw;
+            width: 3.091vw;
+            height: 3.091vw;
+        }
+    }
+
+    &__attractionName {
+        font-family: $fontGentium;
+        font-weight: 300;
+        font-size: 4.2254vh;
+        line-height: 4.8891vh;
+
+        @include mobileLandscape {
+            font-size: 1.6485vw;
+            line-height: 1.9076vw;
+        }
+    }
+
+    &__attractionDescription {
+        font-family: $fontMontserrat;
+        font-weight: 300;
+        font-size: 2.28878vh;
+        //line-height: 2.7905vh;
+        margin-top: .8803vh;
+        line-height: 4vh;
+
+        @include mobileLandscape {
+            font-size: .8926vw;
+            //line-height: 1.3672vw;
+            line-height: 1.7vw;
+            margin-top: .3431vw;
+        }
+    }
 }
