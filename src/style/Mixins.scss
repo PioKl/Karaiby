@@ -404,8 +404,17 @@
     outline: none;
 }
 
-@mixin sectionBanner($width, $height, $border, $fontSize, $lineHeight, $content) {
-    @include absoluteCenter;
+@mixin sectionBanner($width, $height, $border, $fontSize, $lineHeight, $content, $absolute) {
+    @if($absolute==yes) {
+        @include absoluteCenter;
+    }
+
+    @else {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
     @include flex-center;
     width: $width;
     height: $height;
