@@ -1,0 +1,112 @@
+@import './App.scss';
+
+.footer {
+    background: linear-gradient(180deg, #DECCB5 0%, rgba(255, 255, 255, 0) 38.33%), url("../images/footerBackground.png");
+    background-size: cover;
+    height: 64.965vh;
+    display: flex;
+    flex-direction: column;
+
+    @include mobileLandscape {
+        background: linear-gradient(180deg, #DECCB5 0%, rgba(255, 255, 255, 0) 38.33%), url("../images/footerBackgroundLandscape.png");
+        background-size: cover;
+        height: 25.391vw;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        align-items: center;
+        justify-content: space-between;
+        width: 44.895vh;
+        height: 47.02vh;
+        margin-top: 1.9366vh;
+
+        @include mobileLandscape {
+            flex-direction: row;
+            justify-content: space-between;
+            width: 85.287vw;
+            height: 16.6472vw;
+            margin-top: 1.3672vw;
+        }
+    }
+
+    &__postCardsImg {
+        height: 24.31vh;
+        width: 23.297vh;
+
+        @include mobileLandscape {
+            width: 15.3vw;
+            height: 16.6472vw;
+        }
+
+    }
+
+    &__author {
+        font-family: $fontMontserrat;
+        font-weight: 400;
+        font-size: 2.4648vh;
+        line-height: 3vh;
+        margin-top: 5.2817vh;
+        text-align: center;
+
+        @include mobileLandscape {
+            font-size: 1.321vw;
+            line-height: 1.6107vw;
+            margin-top: 1.3503vw;
+        }
+    }
+}
+
+
+.footerMail {
+    @include flex-center-vert();
+    flex-direction: row;
+
+    &__icon {
+        width: 5.106vh;
+        height: 5.106vh;
+        margin-right: .52817vh;
+
+        @include mobileLandscape {
+            width: 2.974vw;
+            height: 2.974vw;
+            margin-right: .3073vw;
+        }
+    }
+
+    &__emailAdress {
+        font-family: $fontMontserrat;
+        font-weight: 400;
+        font-size: 2.4648vh;
+        line-height: 3vh;
+
+        @include mobileLandscape {
+            font-size: 1.4vw;
+            line-height: 1.70573vw;
+        }
+    }
+}
+
+.footerSocial {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+
+
+    @include mobileLandscape {
+        width: 15.04vw;
+    }
+
+    &__icon {
+        width: 7.043vh;
+        height: 7.043vh;
+
+        @include mobileLandscape {
+            width: 2.49vw;
+            height: 2.49vw;
+        }
+    }
+}
