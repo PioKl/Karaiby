@@ -7,6 +7,8 @@ import WorthOfSeeing from './WorthOfSeeing';
 import WorthOfSeeingPart2 from './WorthOfSeeingPart2';
 import WorthOfSeeingContextProvider from "../contexts/WorthOfSeeingContext";
 import Attractions from "./Attractions";
+import FooterBanner from "./FooterBanner";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -23,7 +25,8 @@ function App() {
         <Attractions />
       </main>
       <footer>
-
+        <FooterBanner />
+        <Footer />
       </footer>
     </div>
   );
