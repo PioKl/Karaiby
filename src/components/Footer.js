@@ -1,9 +1,6 @@
 import React from 'react';
 import '../style/Footer.scss';
 import postCards from '../images/postCards.png';
-/* import { ReactComponent as Facebook } from '../svg/facebookBlack.svg';
-import { ReactComponent as Instagram } from '../svg/instagramBlack.svg';
-import { ReactComponent as TwitterBlack } from '../svg/twitterBlackk.svg'; */
 import { ReactComponent as InstagramAlternate } from "../svg/instagramAlternate.svg";
 import { ReactComponent as Facebook } from "../svg/facebook.svg";
 import { ReactComponent as Twitter } from "../svg/twitter.svg";
