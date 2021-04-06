@@ -27,10 +27,9 @@
 }
 
 .attractionsList {
-    display: flex;
+    @include flex-center-horiz();
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 3.5212vh;
     margin-bottom: 18.6883vh;
     color: white;
@@ -52,9 +51,8 @@
     }
 
     &__attraction {
-        display: flex;
+        @include flex-center-vert();
         flex-direction: row;
-        align-items: center;
     }
 
     &__attractionIcon {
@@ -85,13 +83,11 @@
         font-family: $fontMontserrat;
         font-weight: 300;
         font-size: 2.28878vh;
-        //line-height: 2.7905vh;
         margin-top: .8803vh;
         line-height: 4vh;
 
         @include mobileLandscape {
             font-size: .8926vw;
-            //line-height: 1.3672vw;
             line-height: 1.7vw;
             margin-top: .3431vw;
         }
