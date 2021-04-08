@@ -12,12 +12,12 @@ const Footer = () => {
                 <img className="footer__postCardsImg" src={postCards} alt="" />
                 <div className="footerMail">
                     <Mail className="footerMail__icon" />
-                    <p className="footerMail__emailAdress">travel@gmail.com</p>
+                    <p onClick={(e) => { navigator.clipboard.writeText(e.target.innerText) }} className="footerMail__emailAdress">travel@gmail.com</p>
                 </div>
                 <div className="footerSocial">
-                    <InstagramAlternate className="footerSocial__icon" />
-                    <Facebook fill="black" className="footerSocial__icon" />
-                    <Twitter fill="black" className="footerSocial__icon" />
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><InstagramAlternate className="footerSocial__icon" /></a>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><Facebook fill="black" className="footerSocial__icon" /></a>
+                    <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><Twitter fill="black" className="footerSocial__icon" /></a>
                 </div>
             </div>
             <span className="footer__author">Autor Piotr Kłosowski</span>
