@@ -190,7 +190,10 @@
         line-height: 2.7905vh;
         border: none;
         color: white;
-        background-color: #EBAC00;
+        background:
+            linear-gradient(#EBAC00 0 0) top /100% var(--d, 100%) no-repeat,
+            linear-gradient(#EBAC00 0 0) bottom /100% var(--d, 100%) no-repeat;
+        transition: 0.5s;
 
         @include mobileLandscape {
             width: 9.712vw;
@@ -201,6 +204,7 @@
 
         &:hover {
             border: .354vh solid white;
+            --d: 0%;
 
             @include mobileLandscape {
                 border-width: .353vw;
@@ -209,6 +213,7 @@
 
         &:active {
             transform: scale(1.05);
+            transition: 0s;
         }
     }
 }
