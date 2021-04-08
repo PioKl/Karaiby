@@ -260,7 +260,10 @@
         left: 50%;
         transform: translateX(-50%);
         top: 18.14vh;
-        background: #EBAC00;
+        background:
+            linear-gradient(#EBAC00 0 0) top /100% var(--d, 100%) no-repeat,
+            linear-gradient(#EBAC00 0 0) bottom /100% var(--d, 100%) no-repeat;
+        transition: 0.5s;
         border: .2rem solid #FFFCFC;
         color: white;
         padding: 1.3rem 1.1rem;
@@ -313,6 +316,12 @@
 
         &:hover {
             cursor: pointer;
+            --d: 0%;
+        }
+
+        &:active {
+            transform: translateX(-50%) scale(1.05);
+            transition: 0s;
         }
 
     }
