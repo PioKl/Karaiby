@@ -574,3 +574,15 @@
         transform: translateY(0px) scale(1);
     }
 }
+
+@keyframes transitionImg {
+    from {
+        filter: blur(10px);
+        opacity: 0;
+    }
+
+    to {
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
