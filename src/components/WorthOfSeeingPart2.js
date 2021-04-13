@@ -6,17 +6,26 @@ import { ReactComponent as DominicaMap } from '../svg/dominicaMap.svg';
 import { WorthOfSeeingContext } from "../contexts/WorthOfSeeingContext";
 const WorthOfSeeingPart2 = () => {
     const { imageCounter, gallery, placeName, handleNextImage, handlePreviousImage, galleryOfPickedPlace, imageCounterOfPickedPlace, handlePreviousImageOfPickedPlace, handleNextImageOfPickedPlace } = useContext(WorthOfSeeingContext)
+    
+    const handleTransition = () => {
+        const img = document.querySelector(".galleryOfPickedPlace__img");
+        img.classList.add('galleryOfPickedPlace__img--transition')
+        setTimeout(() => {
+          img.classList.remove('galleryOfPickedPlace__img--transition');
+        }, 400);
+    }
+
     return (
         <>
             <div className={`pickedPlace pickedPlace--${placeName[imageCounter].toLowerCase()}`}>
                 <div className="pickedPlace__content">
                     <div className="pickedPlace__main">
                         <div className="galleryOfPickedPlace">
-                            <button onClick={handlePreviousImageOfPickedPlace} className="galleryButton galleryButton--left">
+                            <button onClick={() => {handlePreviousImageOfPickedPlace(); handleTransition()}} className="galleryButton galleryButton--left">
                                 <Arrow className="galleryButton__arrow galleryButton__arrow--left" />
                             </button>
                             <img className="galleryOfPickedPlace__img" src={galleryOfPickedPlace[imageCounter][imageCounterOfPickedPlace]} alt="" />
-                            <button onClick={handleNextImageOfPickedPlace} className="galleryButton galleryButton--right">
+                            <button onClick={() => {handleNextImageOfPickedPlace(); handleTransition()}} className="galleryButton galleryButton--right">
                                 <Arrow className="galleryButton__arrow galleryButton__arrow--right" />
                             </button>
                             <span className="galleryOfPickedPlace__counter">0{imageCounterOfPickedPlace + 1}/0{galleryOfPickedPlace[imageCounter].length}</span>
