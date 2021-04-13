@@ -66,6 +66,10 @@
     &__img {
         width: 100%;
         height: 100%;
+
+        &--transition {
+            @include animation(transitionImg .4s);
+        }
     }
 
     &__counter {
@@ -105,6 +109,7 @@
     width: 4.353vh;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 1;
 
     @include mobileLandscape {
         width: 3.662vw;
