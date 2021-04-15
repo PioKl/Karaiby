@@ -12,7 +12,7 @@ import { ReactComponent as CultureIcon } from '../svg/iconCulture.svg';
 const Attractions = () => {
     return (
         <>
-            <div className="attractions">
+            <div id="attractions" className="attractions">
                 <div className="attractions__banner"></div>
                 <div className="attractionsList">
                     <div className="attractionsList__item">
