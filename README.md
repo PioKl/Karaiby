@@ -1,3 +1,16 @@
+Do zrobienia:
+- Poprawki w kodzie
+- Usunięcie niepotrzebnego kodu
+- Usunięcie drobnych bugów
+- Usunięcie placeholderowych zdjęć w Warto Zobaczyć i dodanie nowych zdjęć/map regionów do poszczególnych miejsc, a także linków prowadzących do poszerzenia wiedzy o regionie
+- Dodanie zdjęć w formacie webp w celu zmniejszenia ich wagi
+- Ewentualne dodanie "loadera" w celu załadowania wszystkich zdjęć, zanim użytkownik dostanie się na stronę
+- Kilka poprawek w wyglądzie
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
