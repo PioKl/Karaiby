@@ -10,8 +10,6 @@ import { WorthOfSeeingContext } from "../contexts/WorthOfSeeingContext";
 const WorthOfSeeing = () => {
     const { imageCounter, placeName, gallery, handleNextImage, handlePreviousImage } = useContext(WorthOfSeeingContext)
 
-    console.log(imageCounter)
-
     const handleTransition = () => {
         const img = document.querySelectorAll(".imageOfPlaceContainer__image");
         const imgTitle = document.querySelector(".imageOfPlaceContainer__placeTitle");
