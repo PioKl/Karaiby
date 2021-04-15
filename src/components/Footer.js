@@ -7,7 +7,7 @@ import { ReactComponent as Twitter } from "../svg/twitter.svg";
 import { ReactComponent as Mail } from '../svg/iconMail.svg';
 const Footer = () => {
     return (
-        <div className="footer">
+        <div id="contact" className="footer">
             <div className="footer__container">
                 <img className="footer__postCardsImg" src={postCards} alt="" />
                 <div className="footerMail">
