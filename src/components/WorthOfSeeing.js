@@ -28,7 +28,7 @@ const WorthOfSeeing = () => {
         }, 400);
     }
     return (
-        <div className="worthOfSeeing">
+        <div id="worthOfSeeing" className="worthOfSeeing">
             <div className="worthOfSeeing__content">
                 <div className="placeToChoose">
                     <button onClick={() => { handlePreviousImage(); handleTransition(); }} className="placeToChoose__buttonArrow"><Arrow className="placeToChoose__arrow placeToChoose__arrow--left" /></button>
