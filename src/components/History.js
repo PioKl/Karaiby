@@ -4,7 +4,7 @@ import map from '../images/caribbeanMap.png';
 import pirateStuff from '../images/pirateStuff.png';
 const History = () => {
     return (
-        <div className="history">
+        <div id="history" className="history">
             <div className="history__content">
                 <div className="history__main">
                     <img className="historyMap" src={map} alt="mapa karaibów" />
