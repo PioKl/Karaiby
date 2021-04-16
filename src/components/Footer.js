@@ -1,6 +1,7 @@
 import React from 'react';
 import '../style/Footer.scss';
 import postCards from '../images/postCards.png';
+import postCardsWebp from '../images/postCards.webp';
 import { ReactComponent as InstagramAlternate } from "../svg/instagramAlternate.svg";
 import { ReactComponent as Facebook } from "../svg/facebook.svg";
 import { ReactComponent as Twitter } from "../svg/twitter.svg";
@@ -9,7 +10,11 @@ const Footer = () => {
     return (
         <div id="contact" className="footer">
             <div className="footer__container">
-                <img className="footer__postCardsImg" src={postCards} alt="" />
+                <picture>
+                    <source srcSet={postCardsWebp} type="image/webp" />
+                    <source srcSet={postCards} type="image/png" />
+                    <img className="footer__postCardsImg" src={postCardsWebp} alt="pocztówki" />
+                </picture>
                 <div className="footerMail">
                     <Mail className="footerMail__icon" />
                     <p onClick={(e) => { navigator.clipboard.writeText(e.target.innerText) }} className="footerMail__emailAdress">travel@gmail.com</p>
