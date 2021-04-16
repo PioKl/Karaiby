@@ -26,6 +26,23 @@
     }
 }
 
+/* ====================================================WEBP IMG SUPPORT =========================================================*/
+.webp .attractions {
+    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.13) 14.9%), linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #08211C 100%), url("../images//attractionsBackground.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+
+    @include mobileLandscape {
+        background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.13) 14.9%), linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #08211C 100%), url("../images//attractionsBackgroundLandscape.webp");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+/* =========================================================================================================================*/
+
 .attractionsList {
     @include flex-center-horiz();
     flex-direction: row;
