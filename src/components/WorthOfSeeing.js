@@ -8,7 +8,7 @@ import kuba from "../images/kubaPhoto.png";
 import { ReactComponent as MoveDownWhite } from '../svg/trianglePolygonWhite.svg';
 import { WorthOfSeeingContext } from "../contexts/WorthOfSeeingContext";
 const WorthOfSeeing = () => {
-    const { imageCounter, placeName, gallery, handleNextImage, handlePreviousImage } = useContext(WorthOfSeeingContext)
+    const { imageCounter, placeName, gallery, galleryWebp, handleNextImage, handlePreviousImage } = useContext(WorthOfSeeingContext)
 
     const handleTransition = () => {
         const img = document.querySelectorAll(".imageOfPlaceContainer__image");
@@ -32,14 +32,26 @@ const WorthOfSeeing = () => {
                     <button onClick={() => { handlePreviousImage(); handleTransition(); }} className="placeToChoose__buttonArrow"><Arrow className="placeToChoose__arrow placeToChoose__arrow--left" /></button>
                     <div className="imagesOfPlacesContainer">
                         <div className="imageOfPlaceContainer imageOfPlaceContainer--left">
-                            <img onClick={() => { handlePreviousImage(); handleTransition(); }} src={gallery[imageCounter > 0 ? imageCounter > 1 ? imageCounter > 2 ? 2 : 1 : 0 : gallery.length - 1]} alt="zdjęcie miejsca" className="imageOfPlaceContainer__image" />
+                            <picture>
+                                <source srcSet={galleryWebp[imageCounter > 0 ? imageCounter > 1 ? imageCounter > 2 ? 2 : 1 : 0 : galleryWebp.length - 1]} type="image/webp" />
+                                <source srcSet={gallery[imageCounter > 0 ? imageCounter > 1 ? imageCounter > 2 ? 2 : 1 : 0 : gallery.length - 1]} type="image/png" />
+                                <img onClick={() => { handlePreviousImage(); handleTransition(); }} src={galleryWebp[imageCounter > 0 ? imageCounter > 1 ? imageCounter > 2 ? 2 : 1 : 0 : galleryWebp.length - 1]} alt="zdjęcie miejsca" className="imageOfPlaceContainer__image" />
+                            </picture>
                         </div>
                         <div className="imageOfPlaceContainer imageOfPlaceContainer--middle">
-                            <img src={gallery[imageCounter]} alt="zdjęcie miejsca" className="imageOfPlaceContainer__image" />
+                            <picture>
+                                <source srcSet={galleryWebp[imageCounter]} type="image/webp" />
+                                <source srcSet={gallery[imageCounter]} type="image/png" />
+                                <img src={galleryWebp[imageCounter]} alt="zdjęcie miejsca" className="imageOfPlaceContainer__image" />
+                            </picture>
                             <h1 className="imageOfPlaceContainer__placeTitle">{placeName[imageCounter]}</h1>
                         </div>
                         <div className="imageOfPlaceContainer imageOfPlaceContainer--right">
-                            <img onClick={() => { handleNextImage(); handleTransition() }} src={gallery[imageCounter > 0 ? imageCounter === gallery.length - 1 ? 0 : imageCounter + 1 : 1]} alt="zdjęcie miejsca" className="imageOfPlaceContainer__image" />
+                            <picture>
+                                <source srcSet={galleryWebp[imageCounter > 0 ? imageCounter === galleryWebp.length - 1 ? 0 : imageCounter + 1 : 1]} type="image/webp" />
+                                <source srcSet={gallery[imageCounter > 0 ? imageCounter === gallery.length - 1 ? 0 : imageCounter + 1 : 1]} type="image/png" />
+                                <img onClick={() => { handleNextImage(); handleTransition() }} src={galleryWebp[imageCounter > 0 ? imageCounter === galleryWebp.length - 1 ? 0 : imageCounter + 1 : 1]} alt="zdjęcie miejsca" className="imageOfPlaceContainer__image" />
+                            </picture>
                         </div>
                     </div>
                     <button onClick={() => { handleNextImage(); handleTransition(); }} className="placeToChoose__buttonArrow"><Arrow className="placeToChoose__arrow placeToChoose__arrow--right" /></button>
