@@ -23,3 +23,20 @@
 
     }
 }
+
+/* ====================================================WEBP IMG SUPPORT =========================================================*/
+.webp .footerBanner {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 41.98%, #DFCDB6 91.98%), linear-gradient(180deg, #071E19 5.52%, rgba(0, 0, 0, 0) 35.73%), url("../images/footerBannerBackground.webp");
+    background-size: cover;
+    height: 36.62vh;
+
+    @include mobileLandscape {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 41.98%, #DFCDB6 91.98%), linear-gradient(180deg, #071E19 5.52%, rgba(0, 0, 0, 0) 35.73%), url("../images/footerBannerBackgroundLandscape.webp");
+        background-size: cover;
+        height: 24.4141vw;
+    }
+}
+
+/* =========================================================================================================================*/
