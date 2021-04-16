@@ -51,6 +51,25 @@
     }
 }
 
+/* ====================================================WEBP IMG SUPPORT =========================================================*/
+.webp .pickedPlace {
+    //background: url("../images/dominicaBackground.png");
+    background: linear-gradient(180deg, #111E1C 0%, rgba(4, 7, 6, 0) 86.25%, #000000 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../images/dominicaBackground.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    //height: 628px;
+    //margin-top: -.3vh;
+
+    @include mobileLandscape {
+        background: linear-gradient(180deg, #0C211F 0%, rgba(4, 7, 6, 0) 86.25%, #000000 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../images/dominicaBackgroundLandscape.webp");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+/* =========================================================================================================================*/
+
 .galleryOfPickedPlace {
     position: relative;
     height: 31.868vh;
