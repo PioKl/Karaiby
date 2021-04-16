@@ -27,6 +27,26 @@
     }
 }
 
+/* ====================================================WEBP IMG SUPPORT =========================================================*/
+.webp .worthOfSeeing {
+    background: url("../images/worthOfSeeingBackground.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    margin-top: -.3vh;
+
+    @include mobileLandscape {
+        height: 713.8358154296875px;
+        height: 46.474vw;
+        background: url("../images/worthOfSeeingBackgroundLandscape.webp");
+        background-size: cover;
+    }
+}
+
+/* =========================================================================================================================*/
+
 .placeToChoose {
 
     display: flex;
