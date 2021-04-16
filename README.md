@@ -1,7 +1,7 @@
 Fikcyjna w pełni responsywna strona o Karaibach (poglądowe przedstawienie ciekawych rzeczy z nimi związanych).
 
 Do zrobienia:
-- Dodanie zdjęć w formacie webp w celu zmniejszenia ich wagi
+- Dodanie zdjęć w formacie webp w celu zmniejszenia ich wagi (zrobione +)
 - Dodanie "loadera" w celu załadowania wszystkich zdjęć, zanim użytkownik dostanie się na stronę
 - Poprawki w kodzie
 - Usunięcie niepotrzebnego kodu
