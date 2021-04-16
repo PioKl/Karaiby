@@ -60,6 +60,23 @@
 }
 
 
+/* ====================================================WEBP IMG SUPPORT =========================================================*/
+.webp .footer {
+    background: linear-gradient(180deg, #DECCB5 0%, rgba(255, 255, 255, 0) 38.33%), url("../images/footerBackground.webp");
+    background-size: cover;
+    height: 64.965vh;
+    display: flex;
+    flex-direction: column;
+
+    @include mobileLandscape {
+        background: linear-gradient(180deg, #DECCB5 0%, rgba(255, 255, 255, 0) 38.33%), url("../images/footerBackgroundLandscape.webp");
+        background-size: cover;
+        height: 25.391vw;
+    }
+}
+
+/* =========================================================================================================================*/
+
 .footerMail {
     @include flex-center-vert();
     flex-direction: row;
