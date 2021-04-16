@@ -5,13 +5,13 @@ import { ReactComponent as ArrowAlternate } from '../svg/arrowAlternate.svg';
 import { ReactComponent as DominicaMap } from '../svg/dominicaMap.svg';
 import { WorthOfSeeingContext } from "../contexts/WorthOfSeeingContext";
 const WorthOfSeeingPart2 = () => {
-    const { imageCounter, gallery, placeName, handleNextImage, handlePreviousImage, galleryOfPickedPlace, imageCounterOfPickedPlace, handlePreviousImageOfPickedPlace, handleNextImageOfPickedPlace } = useContext(WorthOfSeeingContext)
-    
+    const { imageCounter, gallery, placeName, handleNextImage, handlePreviousImage, galleryOfPickedPlace, galleryOfPickedPlaceWebp, imageCounterOfPickedPlace, handlePreviousImageOfPickedPlace, handleNextImageOfPickedPlace } = useContext(WorthOfSeeingContext)
+
     const handleTransition = () => {
         const img = document.querySelector(".galleryOfPickedPlace__img");
         img.classList.add('galleryOfPickedPlace__img--transition')
         setTimeout(() => {
-          img.classList.remove('galleryOfPickedPlace__img--transition');
+            img.classList.remove('galleryOfPickedPlace__img--transition');
         }, 400);
     }
 
@@ -21,11 +21,15 @@ const WorthOfSeeingPart2 = () => {
                 <div className="pickedPlace__content">
                     <div className="pickedPlace__main">
                         <div className="galleryOfPickedPlace">
-                            <button onClick={() => {handlePreviousImageOfPickedPlace(); handleTransition()}} className="galleryButton galleryButton--left">
+                            <button onClick={() => { handlePreviousImageOfPickedPlace(); handleTransition() }} className="galleryButton galleryButton--left">
                                 <Arrow className="galleryButton__arrow galleryButton__arrow--left" />
                             </button>
-                            <img className="galleryOfPickedPlace__img" src={galleryOfPickedPlace[imageCounter][imageCounterOfPickedPlace]} alt="" />
-                            <button onClick={() => {handleNextImageOfPickedPlace(); handleTransition()}} className="galleryButton galleryButton--right">
+                            <picture>
+                                <source srcSet={galleryOfPickedPlaceWebp[imageCounter][imageCounterOfPickedPlace]} type="image/webp" />
+                                <source srcSet={galleryOfPickedPlace[imageCounter][imageCounterOfPickedPlace]} type="image/png" />
+                                <img className="galleryOfPickedPlace__img" src={galleryOfPickedPlaceWebp[imageCounter][imageCounterOfPickedPlace]} alt="" />
+                            </picture>
+                            <button onClick={() => { handleNextImageOfPickedPlace(); handleTransition() }} className="galleryButton galleryButton--right">
                                 <Arrow className="galleryButton__arrow galleryButton__arrow--right" />
                             </button>
                             <span className="galleryOfPickedPlace__counter">0{imageCounterOfPickedPlace + 1}/0{galleryOfPickedPlace[imageCounter].length}</span>
