@@ -8,6 +8,7 @@ Do zrobienia:
 - Usunięcie drobnych bugów
 - Usunięcie placeholderowych zdjęć w Warto Zobaczyć i dodanie nowych zdjęć/map regionów do poszczególnych miejsc, a także linków prowadzących do poszerzenia wiedzy o regionie
 - Kilka poprawek w wyglądzie
+- Ewentualne dodanie rzeczywistych opisów
 
 
 
