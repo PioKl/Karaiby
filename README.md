@@ -1,10 +1,12 @@
+Fikcyjna w pełni responsywna strona o Karaibach (poglądowe przedstawienie ciekawych rzeczy z nimi związanych).
+
 Do zrobienia:
+- Dodanie zdjęć w formacie webp w celu zmniejszenia ich wagi
+- Dodanie "loadera" w celu załadowania wszystkich zdjęć, zanim użytkownik dostanie się na stronę
 - Poprawki w kodzie
 - Usunięcie niepotrzebnego kodu
 - Usunięcie drobnych bugów
 - Usunięcie placeholderowych zdjęć w Warto Zobaczyć i dodanie nowych zdjęć/map regionów do poszczególnych miejsc, a także linków prowadzących do poszerzenia wiedzy o regionie
-- Dodanie zdjęć w formacie webp w celu zmniejszenia ich wagi
-- Ewentualne dodanie "loadera" w celu załadowania wszystkich zdjęć, zanim użytkownik dostanie się na stronę
 - Kilka poprawek w wyglądzie
 
 
