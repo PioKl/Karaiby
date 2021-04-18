@@ -52,10 +52,10 @@ const Header = () => {
                     <span className="logo__companyName">Travel</span>
                 </div>
                 <ul className="menu">
-                    <li onClick={handleScroll} className="menu__item" name="history" title="Historia">Historia</li>
-                    <li onClick={handleScroll} className="menu__item" name="worthOfSeeing" title="Warto zobaczyć">Warto Zobaczyć</li>
-                    <li onClick={handleScroll} className="menu__item" name="attractions" title="Atrakcje">Atrakcje</li>
-                    <li onClick={handleScroll} className="menu__item" name="contact" title="Kontakt">Kontakt</li>
+                    <li onClick={handleScroll} className="menu__item" name="history" alt="Historia">Historia</li>
+                    <li onClick={handleScroll} className="menu__item" name="worthOfSeeing" alt="Warto zobaczyć">Warto Zobaczyć</li>
+                    <li onClick={handleScroll} className="menu__item" name="attractions" alt="Atrakcje">Atrakcje</li>
+                    <li onClick={handleScroll} className="menu__item" name="contact" alt="Kontakt">Kontakt</li>
                 </ul>
                 <div className="social">
                     <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><Instagram fill="white" className="social__icon social__icon--instagram" /></a>
