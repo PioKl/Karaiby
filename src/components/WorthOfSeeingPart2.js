@@ -2,10 +2,9 @@ import React, { useContext } from 'react';
 import '../style/WorthOfSeeingPart2.scss';
 import { ReactComponent as Arrow } from '../svg/arrow.svg';
 import { ReactComponent as ArrowAlternate } from '../svg/arrowAlternate.svg';
-import { ReactComponent as DominicaMap } from '../svg/dominicaMap.svg';
 import { WorthOfSeeingContext } from "../contexts/WorthOfSeeingContext";
 const WorthOfSeeingPart2 = () => {
-    const { imageCounter, gallery, placeName, handleNextImage, handlePreviousImage, galleryOfPickedPlace, galleryOfPickedPlaceWebp, imageCounterOfPickedPlace, handlePreviousImageOfPickedPlace, handleNextImageOfPickedPlace } = useContext(WorthOfSeeingContext)
+    const { imageCounter, gallery, placeName, regionMap, handleNextImage, handlePreviousImage, galleryOfPickedPlace, galleryOfPickedPlaceWebp, imageCounterOfPickedPlace, handlePreviousImageOfPickedPlace, handleNextImageOfPickedPlace } = useContext(WorthOfSeeingContext)
 
     const handleTransition = () => {
         const img = document.querySelector(".galleryOfPickedPlace__img");
@@ -50,7 +49,7 @@ const WorthOfSeeingPart2 = () => {
                         </div>
                     </div>
                     <div className="pickedPlace__footer">
-                        <DominicaMap className="pickedPlace__map" alt="dominica map" />
+                        {regionMap[imageCounter]}
                     </div>
                 </div>
             </div>
