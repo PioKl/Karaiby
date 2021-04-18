@@ -1,14 +1,14 @@
 @import './App.scss';
 
 .attractions {
-    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.13) 14.9%), linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #08211C 100%), url("../images//attractionsBackground.png");
+    @include gradientBackgroundAttractions("../images/attractionsBackground.png");
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
 
     @include mobileLandscape {
-        background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.13) 14.9%), linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #08211C 100%), url("../images//attractionsBackgroundLandscape.png");
+        @include gradientBackgroundAttractions("../images/attractionsBackgroundLandscape.png");
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -28,14 +28,14 @@
 
 /* ====================================================WEBP IMG SUPPORT =========================================================*/
 .webp .attractions {
-    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.13) 14.9%), linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #08211C 100%), url("../images//attractionsBackground.webp");
+    @include gradientBackgroundAttractions("../images/attractionsBackground.webp");
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
 
     @include mobileLandscape {
-        background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.13) 14.9%), linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #08211C 100%), url("../images//attractionsBackgroundLandscape.webp");
+        @include gradientBackgroundAttractions("../images/attractionsBackgroundLandscape.webp");
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -47,11 +47,16 @@
     @include flex-center-horiz();
     flex-direction: row;
     flex-wrap: wrap;
+    /*     display: grid; - poco
+    place-items: center;  - poco*/
     gap: 3.5212vh;
     margin-bottom: 18.6883vh;
     color: white;
 
     @include mobileLandscape {
+        /*         @include flex-center-horiz() - jesli dodam opcje dla poco;
+        flex-direction: row - jesli dodam opcje dla poco;
+        flex-wrap: wrap;  - jesli dodam opcje dla poco*/
         gap: 6.3965vw 2.7344vw;
         margin-bottom: 10.6283vw;
     }
