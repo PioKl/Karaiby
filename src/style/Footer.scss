@@ -1,14 +1,14 @@
 @import './App.scss';
 
 .footer {
-    background: linear-gradient(180deg, #DECCB5 0%, rgba(255, 255, 255, 0) 38.33%), url("../images/footerBackground.png");
+    @include gradientBackgroundFooter("../images/footerBackground.png");
     background-size: cover;
     height: 64.965vh;
     display: flex;
     flex-direction: column;
 
     @include mobileLandscape {
-        background: linear-gradient(180deg, #DECCB5 0%, rgba(255, 255, 255, 0) 38.33%), url("../images/footerBackgroundLandscape.png");
+        @include gradientBackgroundFooter("../images/footerBackgroundLandscape.png");
         background-size: cover;
         height: 25.391vw;
     }
@@ -62,14 +62,14 @@
 
 /* ====================================================WEBP IMG SUPPORT =========================================================*/
 .webp .footer {
-    background: linear-gradient(180deg, #DECCB5 0%, rgba(255, 255, 255, 0) 38.33%), url("../images/footerBackground.webp");
+    @include gradientBackgroundFooter("../images/footerBackground.webp");
     background-size: cover;
     height: 64.965vh;
     display: flex;
     flex-direction: column;
 
     @include mobileLandscape {
-        background: linear-gradient(180deg, #DECCB5 0%, rgba(255, 255, 255, 0) 38.33%), url("../images/footerBackgroundLandscape.webp");
+        @include gradientBackgroundFooter("../images/footerBackgroundLandscape.webp");
         background-size: cover;
         height: 25.391vw;
     }
