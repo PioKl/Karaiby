@@ -1,18 +1,33 @@
 @import './App.scss';
 
 .pickedPlace {
-    //background: url("../images/dominicaBackground.png");
-    background: linear-gradient(180deg, #111E1C 0%, rgba(4, 7, 6, 0) 86.25%, #000000 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../images/dominicaBackground.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    //height: 628px;
-    //margin-top: -.3vh;
+    @include gradientBackgroundWorthOfSeeingPart2Portrait("../images/dominicaBackground.png");
+    @include backgroundDefaultSettings();
+    margin-top: -.3vh;
 
     @include mobileLandscape {
-        background: linear-gradient(180deg, #0C211F 0%, rgba(4, 7, 6, 0) 86.25%, #000000 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../images/dominicaBackgroundLandscape.png");
-        background-repeat: no-repeat;
-        background-size: cover;
+        @include gradientBackgroundWorthOfSeeingPart2("../images/dominicaBackgroundLandscape.png");
+        @include backgroundDefaultSettings();
+    }
+
+    &--kuba {
+        @include gradientBackgroundWorthOfSeeingPart2Portrait("../images/cubaBackground.png");
+        @include backgroundDefaultSettings();
+
+        @include mobileLandscape {
+            @include gradientBackgroundWorthOfSeeingPart2("../images/cubaBackgroundLandscape.png");
+            @include backgroundDefaultSettings();
+        }
+    }
+
+    &--jamajka {
+        @include gradientBackgroundWorthOfSeeingPart2Portrait("../images/jamaicaBackground2.png");
+        @include backgroundDefaultSettings();
+
+        @include mobileLandscape {
+            @include gradientBackgroundWorthOfSeeingPart2("../images/jamaicaBackgroundLandscape2.png");
+            @include backgroundDefaultSettings();
+        }
     }
 
     &__content {
@@ -53,19 +68,34 @@
 
 /* ====================================================WEBP IMG SUPPORT =========================================================*/
 .webp .pickedPlace {
-    //background: url("../images/dominicaBackground.png");
-    background: linear-gradient(180deg, #111E1C 0%, rgba(4, 7, 6, 0) 86.25%, #000000 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../images/dominicaBackground.webp");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    //height: 628px;
-    //margin-top: -.3vh;
+    @include gradientBackgroundWorthOfSeeingPart2Portrait("../images/dominicaBackground.webp");
+    @include backgroundDefaultSettings();
 
     @include mobileLandscape {
-        background: linear-gradient(180deg, #0C211F 0%, rgba(4, 7, 6, 0) 86.25%, #000000 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../images/dominicaBackgroundLandscape.webp");
-        background-repeat: no-repeat;
-        background-size: cover;
+        @include gradientBackgroundWorthOfSeeingPart2("../images/dominicaBackgroundLandscape.webp");
+        @include backgroundDefaultSettings();
     }
+
+    &--kuba {
+        @include gradientBackgroundWorthOfSeeingPart2Portrait("../images/cubaBackground.webp");
+        @include backgroundDefaultSettings();
+
+        @include mobileLandscape {
+            @include gradientBackgroundWorthOfSeeingPart2("../images/cubaBackgroundLandscape.webp");
+            @include backgroundDefaultSettings();
+        }
+    }
+
+    &--jamajka {
+        @include gradientBackgroundWorthOfSeeingPart2Portrait("../images/jamaicaBackground2.webp");
+        @include backgroundDefaultSettings();
+
+        @include mobileLandscape {
+            @include gradientBackgroundWorthOfSeeingPart2("../images/jamaicaBackgroundLandscape2.webp");
+            @include backgroundDefaultSettings();
+        }
+    }
+
 }
 
 /* =========================================================================================================================*/
@@ -174,7 +204,7 @@
     display: flex;
     flex-direction: column;
     width: 47.362vh;
-    height: 36.972vh;
+    //height: 36.972vh;
     margin-bottom: 5.282vh;
 
     @include mobileLandscape {
@@ -193,7 +223,7 @@
         line-height: 2.817vh;
         color: white;
         width: 47.008vh;
-        height: 19.72vh;
+        //height: 19.72vh;
 
         @include mobileLandscape {
             margin-bottom: 1.669vw;
