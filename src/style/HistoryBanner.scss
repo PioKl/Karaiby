@@ -3,12 +3,12 @@
 .historyBanner {
     position: relative;
     width: 100%;
-    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 46.67%, rgba(255, 231, 231, 0) 46.68%, #F4F2F3 100%), url("../images/historyBannerBackground.png");
+    @include gradientBackgroundHistoryBanner("../images/historyBannerBackground.png");
     background-size: cover;
     height: 31.52vh;
 
     @include mobileLandscape {
-        background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 46.67%, rgba(255, 231, 231, 0) 46.68%, #F4F2F3 100%), url("../images/historyBannerBackgroundLandscape.png");
+        @include gradientBackgroundHistoryBanner("../images/historyBannerBackgroundLandscape.png");
         height: 24.391vw;
         background-size: cover;
     }
@@ -28,12 +28,12 @@
 .webp .historyBanner {
     position: relative;
     width: 100%;
-    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 46.67%, rgba(255, 231, 231, 0) 46.68%, #F4F2F3 100%), url("../images/historyBannerBackground.webp");
+    @include gradientBackgroundHistoryBanner("../images/historyBannerBackground.webp");
     background-size: cover;
     height: 31.52vh;
 
     @include mobileLandscape {
-        background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 46.67%, rgba(255, 231, 231, 0) 46.68%, #F4F2F3 100%), url("../images/historyBannerBackgroundLandscape.webp");
+        @include gradientBackgroundHistoryBanner("../images/historyBannerBackgroundLandscape.webp");
         height: 24.391vw;
         background-size: cover;
     }
