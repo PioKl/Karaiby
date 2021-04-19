@@ -1,31 +1,31 @@
 @import './App.scss';
 
 .pickedPlace {
-    @include gradientBackgroundWorthOfSeeingPart2Portrait("../images/dominicaBackground.png");
+    @include gradientBackgroundWorthOfSeeingPart2Portrait("../images/dominicaBackground.webp");
     @include backgroundDefaultSettings();
     margin-top: -.3vh;
 
     @include mobileLandscape {
-        @include gradientBackgroundWorthOfSeeingPart2("../images/dominicaBackgroundLandscape.png");
+        @include gradientBackgroundWorthOfSeeingPart2("../images/dominicaBackgroundLandscape.webp");
         @include backgroundDefaultSettings();
     }
 
     &--kuba {
-        @include gradientBackgroundWorthOfSeeingPart2Portrait("../images/cubaBackground.png");
+        @include gradientBackgroundWorthOfSeeingPart2Portrait("../images/cubaBackground.webp");
         @include backgroundDefaultSettings();
 
         @include mobileLandscape {
-            @include gradientBackgroundWorthOfSeeingPart2("../images/cubaBackgroundLandscape.png");
+            @include gradientBackgroundWorthOfSeeingPart2("../images/cubaBackgroundLandscape.webp");
             @include backgroundDefaultSettings();
         }
     }
 
     &--jamajka {
-        @include gradientBackgroundWorthOfSeeingPart2Portrait("../images/jamaicaBackground2.png");
+        @include gradientBackgroundWorthOfSeeingPart2Portrait("../images/jamaicaBackground2.webp");
         @include backgroundDefaultSettings();
 
         @include mobileLandscape {
-            @include gradientBackgroundWorthOfSeeingPart2("../images/jamaicaBackgroundLandscape2.png");
+            @include gradientBackgroundWorthOfSeeingPart2("../images/jamaicaBackgroundLandscape2.webp");
             @include backgroundDefaultSettings();
         }
     }
@@ -66,32 +66,32 @@
     }
 }
 
-/* ====================================================WEBP IMG SUPPORT =========================================================*/
-.webp .pickedPlace {
-    @include gradientBackgroundWorthOfSeeingPart2Portrait("../images/dominicaBackground.webp");
+/* ====================================================PNG IMG SUPPORT =========================================================*/
+.no-webp .pickedPlace {
+    @include gradientBackgroundWorthOfSeeingPart2Portrait("../images/dominicaBackground.png");
     @include backgroundDefaultSettings();
 
     @include mobileLandscape {
-        @include gradientBackgroundWorthOfSeeingPart2("../images/dominicaBackgroundLandscape.webp");
+        @include gradientBackgroundWorthOfSeeingPart2("../images/dominicaBackgroundLandscape.png");
         @include backgroundDefaultSettings();
     }
 
     &--kuba {
-        @include gradientBackgroundWorthOfSeeingPart2Portrait("../images/cubaBackground.webp");
+        @include gradientBackgroundWorthOfSeeingPart2Portrait("../images/cubaBackground.png");
         @include backgroundDefaultSettings();
 
         @include mobileLandscape {
-            @include gradientBackgroundWorthOfSeeingPart2("../images/cubaBackgroundLandscape.webp");
+            @include gradientBackgroundWorthOfSeeingPart2("../images/cubaBackgroundLandscape.png");
             @include backgroundDefaultSettings();
         }
     }
 
     &--jamajka {
-        @include gradientBackgroundWorthOfSeeingPart2Portrait("../images/jamaicaBackground2.webp");
+        @include gradientBackgroundWorthOfSeeingPart2Portrait("../images/jamaicaBackground2.png");
         @include backgroundDefaultSettings();
 
         @include mobileLandscape {
-            @include gradientBackgroundWorthOfSeeingPart2("../images/jamaicaBackgroundLandscape2.webp");
+            @include gradientBackgroundWorthOfSeeingPart2("../images/jamaicaBackgroundLandscape2.png");
             @include backgroundDefaultSettings();
         }
     }
