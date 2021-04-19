@@ -3,13 +3,13 @@
 .footerBanner {
     position: relative;
     width: 100%;
-    @include gradientBackgroundFooterBanner("../images/footerBannerBackground.png");
+    @include gradientBackgroundFooterBanner("../images/footerBannerBackground.webp");
     background-size: cover;
     height: 36.62vh;
     margin-top: -.3vh;
 
     @include mobileLandscape {
-        @include gradientBackgroundFooterBanner("../images/footerBannerBackgroundLandscape.png");
+        @include gradientBackgroundFooterBanner("../images/footerBannerBackgroundLandscape.webp");
         background-size: cover;
         height: 24.4141vw;
     }
@@ -25,16 +25,16 @@
     }
 }
 
-/* ====================================================WEBP IMG SUPPORT =========================================================*/
-.webp .footerBanner {
+/* ====================================================PNG IMG SUPPORT =========================================================*/
+.no-webp .footerBanner {
     position: relative;
     width: 100%;
-    @include gradientBackgroundFooterBanner("../images/footerBannerBackground.webp");
+    @include gradientBackgroundFooterBanner("../images/footerBannerBackground.png");
     background-size: cover;
     height: 36.62vh;
 
     @include mobileLandscape {
-        @include gradientBackgroundFooterBanner("../images/footerBannerBackgroundLandscape.webp");
+        @include gradientBackgroundFooterBanner("../images/footerBannerBackgroundLandscape.png");
         background-size: cover;
         height: 24.4141vw;
     }
