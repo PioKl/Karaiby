@@ -3,12 +3,12 @@
 .historyBanner {
     position: relative;
     width: 100%;
-    @include gradientBackgroundHistoryBanner("../images/historyBannerBackground.png");
+    @include gradientBackgroundHistoryBanner("../images/historyBannerBackground.webp");
     background-size: cover;
     height: 31.52vh;
 
     @include mobileLandscape {
-        @include gradientBackgroundHistoryBanner("../images/historyBannerBackgroundLandscape.png");
+        @include gradientBackgroundHistoryBanner("../images/historyBannerBackgroundLandscape.webp");
         height: 24.391vw;
         background-size: cover;
     }
@@ -24,16 +24,16 @@
     }
 }
 
-/* ====================================================WEBP IMG SUPPORT =========================================================*/
-.webp .historyBanner {
+/* ====================================================PNG IMG SUPPORT =========================================================*/
+.no-webp .historyBanner {
     position: relative;
     width: 100%;
-    @include gradientBackgroundHistoryBanner("../images/historyBannerBackground.webp");
+    @include gradientBackgroundHistoryBanner("../images/historyBannerBackground.png");
     background-size: cover;
     height: 31.52vh;
 
     @include mobileLandscape {
-        @include gradientBackgroundHistoryBanner("../images/historyBannerBackgroundLandscape.webp");
+        @include gradientBackgroundHistoryBanner("../images/historyBannerBackgroundLandscape.png");
         height: 24.391vw;
         background-size: cover;
     }
