@@ -1,30 +1,6 @@
 @import './App.scss';
 
 .worthOfSeeing {
-    background: url("../images/worthOfSeeingBackground.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    margin-top: -.3vh;
-
-    @include mobileLandscape {
-        height: 713.8358154296875px;
-        height: 46.474vw;
-        background: url("../images/worthOfSeeingBackgroundLandscape.png");
-        background-size: cover;
-    }
-
-    &__content {
-        display: flex;
-        flex-direction: column;
-        @include absoluteCenter();
-    }
-}
-
-/* ====================================================WEBP IMG SUPPORT =========================================================*/
-.webp .worthOfSeeing {
     background: url("../images/worthOfSeeingBackground.webp");
     background-repeat: no-repeat;
     background-size: cover;
@@ -37,6 +13,30 @@
         height: 713.8358154296875px;
         height: 46.474vw;
         background: url("../images/worthOfSeeingBackgroundLandscape.webp");
+        background-size: cover;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        @include absoluteCenter();
+    }
+}
+
+/* ====================================================PNG IMG SUPPORT =========================================================*/
+.no-webp .worthOfSeeing {
+    background: url("../images/worthOfSeeingBackground.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    margin-top: -.3vh;
+
+    @include mobileLandscape {
+        height: 713.8358154296875px;
+        height: 46.474vw;
+        background: url("../images/worthOfSeeingBackgroundLandscape.png");
         background-size: cover;
     }
 }
