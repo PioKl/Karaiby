@@ -3,12 +3,12 @@
 .worthOfSeeingBanner {
     position: relative;
     width: 100%;
-    @include gradientBackgroundWorthOfSeeingBannerPortrait("../images/worthOfSeeingBannerBackground.png");
+    @include gradientBackgroundWorthOfSeeingBannerPortrait("../images/worthOfSeeingBannerBackground.webp");
     background-size: cover;
     height: 31.52vh;
 
     @include mobileLandscape {
-        @include gradientBackgroundWorthOfSeeingBanner("../images/worthOfSeeingBannerBackgroundLandscape.png");
+        @include gradientBackgroundWorthOfSeeingBanner("../images/worthOfSeeingBannerBackgroundLandscape.webp");
         height: 35.26vw;
         background-size: cover;
     }
@@ -23,16 +23,16 @@
     }
 }
 
-/* ====================================================WEBP IMG SUPPORT =========================================================*/
-.webp .worthOfSeeingBanner {
+/* ====================================================PNG IMG SUPPORT =========================================================*/
+.no-webp .worthOfSeeingBanner {
     position: relative;
     width: 100%;
-    @include gradientBackgroundWorthOfSeeingBannerPortrait("../images/worthOfSeeingBannerBackground.webp");
+    @include gradientBackgroundWorthOfSeeingBannerPortrait("../images/worthOfSeeingBannerBackground.png");
     background-size: cover;
     height: 31.52vh;
 
     @include mobileLandscape {
-        @include gradientBackgroundWorthOfSeeingBanner("../images/worthOfSeeingBannerBackgroundLandscape.webp");
+        @include gradientBackgroundWorthOfSeeingBanner("../images/worthOfSeeingBannerBackgroundLandscape.png");
         height: 35.26vw;
         background-size: cover;
     }
