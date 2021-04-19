@@ -1,4 +1,5 @@
 import '../style/App.scss';
+import Loader from './Loader';
 import Header from './Header';
 import HistoryBanner from './HistoryBanner';
 import History from './History';
@@ -13,6 +14,7 @@ import Footer from "./Footer";
 function App() {
   return (
     <div className="App">
+      <Loader />
       <Header />
       <main>
         <HistoryBanner />
