@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Karaiby/static/css/main.cff0f59d.chunk.css",
-    "main.js": "/Karaiby/static/js/main.396e750c.chunk.js",
-    "main.js.map": "/Karaiby/static/js/main.396e750c.chunk.js.map",
+    "main.js": "/Karaiby/static/js/main.65b8bd38.chunk.js",
+    "main.js.map": "/Karaiby/static/js/main.65b8bd38.chunk.js.map",
     "runtime-main.js": "/Karaiby/static/js/runtime-main.b219fec3.js",
     "runtime-main.js.map": "/Karaiby/static/js/runtime-main.b219fec3.js.map",
     "static/js/2.18868558.chunk.js": "/Karaiby/static/js/2.18868558.chunk.js",
@@ -45,7 +45,7 @@
     "static/media/facebook.26e7ab2b.svg": "/Karaiby/static/media/facebook.26e7ab2b.svg",
     "static/media/Footer.scss": "/Karaiby/static/media/footerBackgroundLandscape.f53c2d9c.png",
     "static/media/FooterBanner.scss": "/Karaiby/static/media/footerBannerBackgroundLandscape.9705b4b2.png",
-    "static/media/headerBackground.95b3af09.mp4": "/Karaiby/static/media/headerBackground.95b3af09.mp4",
+    "static/media/headerBackground.f3cc8013.mp4": "/Karaiby/static/media/headerBackground.f3cc8013.mp4",
     "static/media/HistoryBanner.scss": "/Karaiby/static/media/historyBannerBackgroundLandscape.f09d5bde.png",
     "static/media/iconBeach.df6b6418.svg": "/Karaiby/static/media/iconBeach.df6b6418.svg",
     "static/media/iconCulture.66328cde.svg": "/Karaiby/static/media/iconCulture.66328cde.svg",
@@ -84,6 +84,6 @@
     "static/js/runtime-main.b219fec3.js",
     "static/js/2.18868558.chunk.js",
     "static/css/main.cff0f59d.chunk.css",
-    "static/js/main.396e750c.chunk.js"
+    "static/js/main.65b8bd38.chunk.js"
   ]
 }
