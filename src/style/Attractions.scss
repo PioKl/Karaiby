@@ -1,14 +1,14 @@
 @import './App.scss';
 
 .attractions {
-    @include gradientBackgroundAttractions("../images/attractionsBackground.png");
+    @include gradientBackgroundAttractions("../images/attractionsBackground.webp");
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
 
     @include mobileLandscape {
-        @include gradientBackgroundAttractions("../images/attractionsBackgroundLandscape.png");
+        @include gradientBackgroundAttractions("../images/attractionsBackgroundLandscape.webp");
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -26,16 +26,16 @@
     }
 }
 
-/* ====================================================WEBP IMG SUPPORT =========================================================*/
-.webp .attractions {
-    @include gradientBackgroundAttractions("../images/attractionsBackground.webp");
+/* ====================================================PNG IMG SUPPORT =========================================================*/
+.no-webp .attractions {
+    @include gradientBackgroundAttractions("../images/attractionsBackground.png");
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
 
     @include mobileLandscape {
-        @include gradientBackgroundAttractions("../images/attractionsBackgroundLandscape.webp");
+        @include gradientBackgroundAttractions("../images/attractionsBackgroundLandscape.png");
         background-repeat: no-repeat;
         background-size: cover;
     }
