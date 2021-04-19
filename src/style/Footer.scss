@@ -1,14 +1,14 @@
 @import './App.scss';
 
 .footer {
-    @include gradientBackgroundFooter("../images/footerBackground.png");
+    @include gradientBackgroundFooter("../images/footerBackground.webp");
     background-size: cover;
     height: 64.965vh;
     display: flex;
     flex-direction: column;
 
     @include mobileLandscape {
-        @include gradientBackgroundFooter("../images/footerBackgroundLandscape.png");
+        @include gradientBackgroundFooter("../images/footerBackgroundLandscape.webp");
         background-size: cover;
         height: 25.391vw;
     }
@@ -60,16 +60,16 @@
 }
 
 
-/* ====================================================WEBP IMG SUPPORT =========================================================*/
-.webp .footer {
-    @include gradientBackgroundFooter("../images/footerBackground.webp");
+/* ====================================================PNG IMG SUPPORT =========================================================*/
+.no-webp .footer {
+    @include gradientBackgroundFooter("../images/footerBackground.png");
     background-size: cover;
     height: 64.965vh;
     display: flex;
     flex-direction: column;
 
     @include mobileLandscape {
-        @include gradientBackgroundFooter("../images/footerBackgroundLandscape.webp");
+        @include gradientBackgroundFooter("../images/footerBackgroundLandscape.png");
         background-size: cover;
         height: 25.391vw;
     }
