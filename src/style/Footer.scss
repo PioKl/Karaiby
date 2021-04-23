@@ -23,6 +23,10 @@
         height: 47.02vh;
         margin-top: 1.9366vh;
 
+        @include mobilePortrait {
+            @include widthPortrait(25.5, 61.3438);
+        }
+
         @include mobileLandscape {
             flex-direction: row;
             justify-content: space-between;
