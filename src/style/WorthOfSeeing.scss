@@ -233,6 +233,10 @@
     font-size: 1.7607vh;
     line-height: 2.375vh;
 
+    @include mobilePortrait {
+        @include widthPortrait(24, 57.7);
+    }
+
     @include mobileLandscape {
         width: 17.0101vw;
         font-size: 1.125vw;
