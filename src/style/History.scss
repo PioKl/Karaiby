@@ -53,7 +53,6 @@
 
 .historyInfo {
     width: 38.56vh;
-    height: 40.141vh;
 
     @include mobileLandscape {
         width: 39.78vw;
@@ -68,6 +67,10 @@
         line-height: 3.7993vh;
         margin-bottom: 1.41vh;
 
+        @include mobilePortrait {
+            @include fontLinePortrait(1.60176, 3.85325, 2.158, 5.19136);
+        }
+
         @include mobileLandscape {
             font-size: 2.3433vw;
             line-height: 3.162vw;
@@ -80,6 +83,10 @@
         font-weight: 400;
         font-size: 2.113vh;
         line-height: 3.132vh;
+
+        @include mobilePortrait {
+            @include fontLinePortrait(1.20018, 2.8872, 1.77898, 4.27956);
+        }
 
         @include mobileLandscape {
             font-size: 1.0828vw;
