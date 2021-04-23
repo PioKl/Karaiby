@@ -106,6 +106,10 @@
     width: 47.362vh;
     margin-bottom: 5.282vh;
 
+    @include mobilePortrait {
+        @include widthPortrait(26.9013, 64.715);
+    }
+
     @include mobileLandscape {
         margin-bottom: 0;
         width: 32.364vw;
@@ -204,8 +208,12 @@
     display: flex;
     flex-direction: column;
     width: 47.362vh;
-    //height: 36.972vh;
     margin-bottom: 5.282vh;
+
+    @include mobilePortrait {
+        @include widthPortrait(26.9013, 64.715);
+    }
+
 
     @include mobileLandscape {
         margin-bottom: 0;
@@ -220,10 +228,14 @@
         font-style: normal;
         font-weight: 300;
         font-size: 2.289vh;
-        line-height: 2.817vh;
+        line-height: 3.132vh;
         color: white;
         width: 47.008vh;
-        //height: 19.72vh;
+
+        @include mobilePortrait {
+            @include widthPortrait(26.7, 64.231);
+            @include fontLinePortrait(1.30015, 3.12769, 1.77898, 4.27956);
+        }
 
         @include mobileLandscape {
             margin-bottom: 1.669vw;
@@ -290,6 +302,10 @@
         font-size: 5.6338vh;
         line-height: 7.6004vh;
         color: white;
+
+        @include mobilePortrait {
+            @include fontLinePortrait(3.2, 7.69802, 4.31703, 10.3852);
+        }
 
         @include mobileLandscape {
             font-size: 2.958vw;
