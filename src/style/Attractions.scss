@@ -47,16 +47,11 @@
     @include flex-center-horiz();
     flex-direction: row;
     flex-wrap: wrap;
-    /*     display: grid; - poco
-    place-items: center;  - poco*/
     gap: 3.5212vh;
     margin-bottom: 18.6883vh;
     color: white;
 
     @include mobileLandscape {
-        /*         @include flex-center-horiz() - jesli dodam opcje dla poco;
-        flex-direction: row - jesli dodam opcje dla poco;
-        flex-wrap: wrap;  - jesli dodam opcje dla poco*/
         gap: 6.3965vw 2.7344vw;
         margin-bottom: 10.6283vw;
     }
@@ -67,8 +62,13 @@
         width: 51.057vh;
         height: auto;
 
+        @include mobilePortrait {
+            @include widthPortrait(29, 69.7638);
+        }
+
         @include mobileLandscape {
             width: 19.917vw;
+            @include widthLandscape(desktop, 20.395, 50.9875);
         }
     }
 
@@ -81,6 +81,10 @@
         margin-right: 1.05634vh;
         width: 7.923vh;
         height: 7.923vh;
+
+        @include mobilePortrait {
+            @include width-heightPortrait(4.5, 10.85);
+        }
 
         @include mobileLandscape {
             margin-right: .412103vw;
@@ -95,6 +99,10 @@
         font-size: 4.2254vh;
         line-height: 4.8891vh;
 
+        @include mobilePortrait {
+            @include fontLinePortrait(2.40003, 5.77359, 2.77701, 6.68047);
+        }
+
         @include mobileLandscape {
             font-size: 1.6485vw;
             line-height: 1.9076vw;
@@ -107,6 +115,10 @@
         font-size: 2.28878vh;
         margin-top: .8803vh;
         line-height: 4vh;
+
+        @include mobilePortrait {
+            @include fontLinePortrait(1.30003, 3.12739, 2.272, 5.4656);
+        }
 
         @include mobileLandscape {
             font-size: .8926vw;
