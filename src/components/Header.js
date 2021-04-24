@@ -66,7 +66,6 @@ const Header = () => {
                     onClick={() => { handleMenuBurger(); lockScroll() }} className="navigation__burgerMenu" />}
                 <div className={`navigationContainer navigationContainer--${burgerMenu ? "visible" : "hidden"}`}>
                     <ul className="navigationContainer__burgerItemList">
-                        <li onClick={handleScroll} name="mainSite" className="navigationContainer__burgerItem navigationContainer__burgerItem--mainSite">Strona Główna</li>
                         <li onClick={handleScroll} name="history" className="navigationContainer__burgerItem">Historia</li>
                         <li onClick={handleScroll} name="worthOfSeeing" className="navigationContainer__burgerItem">Warto Zobaczyć</li>
                         <li onClick={handleScroll} name="attractions" className="navigationContainer__burgerItem">Atrakcje</li>
