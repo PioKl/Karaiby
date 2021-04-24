@@ -1,0 +1,59 @@
+@import './App.scss';
+
+.scrollTopButton {
+    display: grid;
+    place-items: center;
+    position: fixed;
+    width: 5.46vh;
+    height: 5.46vh;
+    right: 2vh;
+    bottom: 6vh;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: #EBAC00;
+    border: .2vh solid black;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    cursor: pointer;
+
+    &:active {
+        transform: scale(.9);
+    }
+
+    @include mobileLandscape {
+        width: 4vw;
+        height: 4vw;
+        right: 1vw;
+        bottom: 3vw;
+        border-width: .15vw;
+    }
+
+    &:before {
+        content: '';
+        background: url('../svg/arrow.svg') no-repeat;
+        background-size: 3.3vh 3.3vh;
+        width: 3.3vh;
+        height: 3.3vh;
+        transform: rotate(90deg);
+
+        @include mobileLandscape {
+            background-size: 2.5vw 2.5vw;
+            width: 2.5vw;
+            height: 2.5vw;
+        }
+    }
+}
+
+
+.showButton {
+    animation: showButton 1s forwards;
+}
+
+@keyframes showButton {
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
