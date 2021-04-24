@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Karaiby/static/css/main.05c5175b.chunk.css",
-    "main.js": "/Karaiby/static/js/main.5321d5fa.chunk.js",
-    "main.js.map": "/Karaiby/static/js/main.5321d5fa.chunk.js.map",
-    "runtime-main.js": "/Karaiby/static/js/runtime-main.b219fec3.js",
-    "runtime-main.js.map": "/Karaiby/static/js/runtime-main.b219fec3.js.map",
+    "main.css": "/Karaiby/static/css/main.e4135900.chunk.css",
+    "main.js": "/Karaiby/static/js/main.2df6d977.chunk.js",
+    "main.js.map": "/Karaiby/static/js/main.2df6d977.chunk.js.map",
+    "runtime-main.js": "/Karaiby/static/js/runtime-main.f7d1ae74.js",
+    "runtime-main.js.map": "/Karaiby/static/js/runtime-main.f7d1ae74.js.map",
     "static/js/2.18868558.chunk.js": "/Karaiby/static/js/2.18868558.chunk.js",
     "static/js/2.18868558.chunk.js.map": "/Karaiby/static/js/2.18868558.chunk.js.map",
-    "static/js/3.dc01dda8.chunk.js": "/Karaiby/static/js/3.dc01dda8.chunk.js",
-    "static/js/3.dc01dda8.chunk.js.map": "/Karaiby/static/js/3.dc01dda8.chunk.js.map",
+    "static/js/3.0dc53043.chunk.js": "/Karaiby/static/js/3.0dc53043.chunk.js",
+    "static/js/3.0dc53043.chunk.js.map": "/Karaiby/static/js/3.0dc53043.chunk.js.map",
     "index.html": "/Karaiby/index.html",
-    "static/css/main.05c5175b.chunk.css.map": "/Karaiby/static/css/main.05c5175b.chunk.css.map",
+    "static/css/main.e4135900.chunk.css.map": "/Karaiby/static/css/main.e4135900.chunk.css.map",
     "static/js/2.18868558.chunk.js.LICENSE.txt": "/Karaiby/static/js/2.18868558.chunk.js.LICENSE.txt",
-    "static/media/arrow.bbf9af4c.svg": "/Karaiby/static/media/arrow.bbf9af4c.svg",
+    "static/media/ScrollBack.scss": "/Karaiby/static/media/arrow.bbf9af4c.svg",
     "static/media/arrowAlternate.717df281.svg": "/Karaiby/static/media/arrowAlternate.717df281.svg",
     "static/media/Attractions.scss": "/Karaiby/static/media/attractionsBackgroundLandscape.ca65f371.png",
     "static/media/burgerMenu.f0f7203b.svg": "/Karaiby/static/media/burgerMenu.f0f7203b.svg",
@@ -81,9 +81,9 @@
     "static/media/WorthOfSeeingBanner.scss": "/Karaiby/static/media/worthOfSeeingBannerBackgroundLandscape.1a54e35e.webp"
   },
   "entrypoints": [
-    "static/js/runtime-main.b219fec3.js",
+    "static/js/runtime-main.f7d1ae74.js",
     "static/js/2.18868558.chunk.js",
-    "static/css/main.05c5175b.chunk.css",
-    "static/js/main.5321d5fa.chunk.js"
+    "static/css/main.e4135900.chunk.css",
+    "static/js/main.2df6d977.chunk.js"
   ]
 }
