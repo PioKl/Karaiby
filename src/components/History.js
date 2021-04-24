@@ -4,6 +4,8 @@ import map from '../images/caribbeanMap.png';
 import mapWebp from '../images/caribbeanMap.webp';
 import pirateStuff from '../images/pirateStuff.png';
 import pirateStuffWebp from '../images/pirateStuff.webp';
+import ScrollBack from "./ScrollBack";
+
 const History = () => {
     return (
         <div id="history" className="history">
@@ -24,7 +26,7 @@ const History = () => {
                     <source srcSet={pirateStuff} type="image/png" />
                     <img className="history__footer" src={pirateStuffWebp} alt="pirackie rzeczy" />
                 </picture>
-
+                <ScrollBack />
             </div>
 
         </div>
