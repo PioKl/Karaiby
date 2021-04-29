@@ -14,11 +14,9 @@
     }
 
     &__container {
-        display: flex;
+        @include flex-spaceBetweenCenter();
         flex-direction: column;
         align-self: center;
-        align-items: center;
-        justify-content: space-between;
         width: 44.895vh;
         height: 47.02vh;
         margin-top: 1.9366vh;
@@ -29,7 +27,6 @@
 
         @include mobileLandscape {
             flex-direction: row;
-            justify-content: space-between;
             width: 85.287vw;
             height: 16.6472vw;
             margin-top: 1.3672vw;
