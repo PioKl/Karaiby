@@ -26,7 +26,7 @@ const WorthOfSeeingPart2 = () => {
                             <picture>
                                 <source srcSet={galleryOfPickedPlaceWebp[imageCounter][imageCounterOfPickedPlace]} type="image/webp" />
                                 <source srcSet={galleryOfPickedPlace[imageCounter][imageCounterOfPickedPlace]} type="image/png" />
-                                <img className="galleryOfPickedPlace__img" src={galleryOfPickedPlaceWebp[imageCounter][imageCounterOfPickedPlace]} alt="" />
+                                <img className="galleryOfPickedPlace__img" src={galleryOfPickedPlaceWebp[imageCounter][imageCounterOfPickedPlace]} alt="galeria zdjęć" />
                             </picture>
                             <button onClick={() => { handleNextImageOfPickedPlace(); handleTransition() }} className="galleryButton galleryButton--right">
                                 <Arrow className="galleryButton__arrow galleryButton__arrow--right" />
