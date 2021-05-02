@@ -1,9 +1,6 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import '../style/WorthOfSeeing.scss';
 import { ReactComponent as Arrow } from '../svg/arrow.svg';
-import dominica from "../images/dominicaPhoto.png";
-import jamajka from "../images/jamajkaPhoto.png";
-import kuba from "../images/kubaPhoto.png";
 
 import { ReactComponent as MoveDownWhite } from '../svg/trianglePolygonWhite.svg';
 import { WorthOfSeeingContext } from "../contexts/WorthOfSeeingContext";
