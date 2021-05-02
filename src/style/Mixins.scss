@@ -94,16 +94,6 @@
                                                         Landscape Mixins 
 ======================================================================================================================================*/
 //arg 1 to bedzie min font size, 2 max font-size, 3 to min line-height, a 4 to max line-height
-@mixin fontLineLandscape3($arg...) {
-    @if length($arg==2) {
-        font-size: calc(#{nth($arg, 1)}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{nth($arg, 2)} - #{nth($arg, 1)}));
-    }
-
-    @if length($arg==4) {
-        line-height: calc(#{nth($arg, 3)}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{nth($arg, 4)} - #{nth($arg, 3)}));
-    }
-
-}
 
 @mixin fontLineLandscape($size, $arg...) {
     @if($size==universal) {
@@ -147,29 +137,6 @@
     }
 }
 
-
-
-@mixin fontLineLandscape2($size, $arg...) {
-    @if($size==mobile) {
-        @if length($arg==2) {
-            font-size: calc(#{nth($arg, 1)}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-small-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{nth($arg, 2)} - #{nth($arg, 1)}));
-        }
-
-        @if length($arg==4) {
-            line-height: calc(#{nth($arg, 3)}rem + (((100vw - #{$bp-smaller-landscapeWidth/1em*1.6rem}) / (#{$bp-small-landscapeWidth/1em * 1.6} - #{$bp-smaller-landscapeWidth/1em * 1.6}))) * (#{nth($arg, 4)} - #{nth($arg, 3)}));
-        }
-    }
-
-    @else if($size==desktop) {
-        @if length($arg==2) {
-            font-size: calc(#{nth($arg, 1)}rem + (((100vw - #{$bp-small-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-small-landscapeWidth/1em * 1.6}))) * (#{nth($arg, 2)} - #{nth($arg, 1)}));
-        }
-
-        @if length($arg==4) {
-            line-height: calc(#{nth($arg, 3)}rem + (((100vw - #{$bp-small-landscapeWidth/1em*1.6rem}) / (#{$bp-large-landscapeWidth/1em * 1.6} - #{$bp-small-landscapeWidth/1em * 1.6}))) * (#{nth($arg, 4)} - #{nth($arg, 3)}));
-        }
-    }
-}
 
 @mixin font-sizeLandscape($size, $min, $max) {
     @if($size==universal) {
