@@ -14,7 +14,6 @@
     }
 
     &__sectionTitle {
-        //50.7261vh
         @include sectionBanner(45.7261vh, 8.938vh, .388vh, 4.176vh, 5.634vh, Warto Zobaczyć, yes);
 
         @include mobileLandscape {
