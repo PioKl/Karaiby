@@ -130,7 +130,7 @@
         position: absolute;
         bottom: 0%;
         right: 0%;
-        color: white;
+        color: $white;
         background: rgba(0, 0, 0, 0.61);
         width: 5.496vh;
         height: 3.346vh;
@@ -155,7 +155,7 @@
     position: absolute;
     outline: none;
     border: none;
-    background-color: #EBAC00;
+    background-color: $orange;
     border-bottom-left-radius: 90px;
     border-top-left-radius: 90px;
     height: 8.275vh;
@@ -229,7 +229,7 @@
         font-weight: 300;
         font-size: 2.289vh;
         line-height: 3.132vh;
-        color: white;
+        color: $white;
         width: 47.008vh;
 
         @include mobilePortrait {
@@ -255,10 +255,10 @@
         font-size: 2.289vh;
         line-height: 2.7905vh;
         border: none;
-        color: white;
+        color: $white;
         background:
-            linear-gradient(#EBAC00 0 0) top /100% var(--d, 100%) no-repeat,
-            linear-gradient(#EBAC00 0 0) bottom /100% var(--d, 100%) no-repeat;
+            linear-gradient($orange 0 0) top /100% var(--d, 100%) no-repeat,
+            linear-gradient($orange 0 0) bottom /100% var(--d, 100%) no-repeat;
         transition: 0.5s;
 
         @include mobileLandscape {
@@ -266,14 +266,16 @@
             height: 2.311vw;
             line-height: 1.46127vw;
             font-size: 1.2025vw;
+            //Początkowy border transparent w celu wyeliminowania "trzęsącego" efektu przy hover
+            border: .173vw solid transparent;
         }
 
         &:hover {
-            border: .354vh solid white;
+            border: .354vh solid $white;
             --d: 0%;
 
             @include mobileLandscape {
-                border-width: .353vw;
+                border-width: .173vw;
             }
         }
 
@@ -301,7 +303,7 @@
         font-weight: 400;
         font-size: 5.6338vh;
         line-height: 7.6004vh;
-        color: white;
+        color: $white;
 
         @include mobilePortrait {
             @include fontLinePortrait(3.2, 7.69802, 4.31703, 10.3852);
@@ -360,11 +362,9 @@
         font-weight: 400;
         font-size: 1.53vh;
         line-height: 1.8644vh;
-        color: white;
+        color: $white;
 
         @include mobileLandscape {
-            //36.2375px
-            //width: 2.36vw;
             text-align: center;
             width: 3vw;
             margin: 0 .62148vw;
