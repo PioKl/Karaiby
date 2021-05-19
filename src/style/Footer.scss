@@ -81,6 +81,7 @@
 .footerMail {
     @include flex-center-vert();
     flex-direction: row;
+    position: relative;
 
     &__icon {
         width: 5.106vh;
@@ -99,10 +100,36 @@
         font-weight: 400;
         font-size: 2.4648vh;
         line-height: 3vh;
+        cursor: pointer;
 
         @include mobileLandscape {
             font-size: 1.4vw;
             line-height: 1.70573vw;
+        }
+    }
+
+    &__copiedMessage {
+        cursor: default;
+        opacity: 0;
+        visibility: hidden;
+        background-color: black;
+        color: $white;
+        text-align: center;
+        border-radius: 1.06vh;
+        padding: 1.41vh 1.8vh;
+        font-family: $fontMontserrat;
+        font-weight: 400;
+        font-size: 1.6vh;
+        position: absolute;
+        left: 80%;
+        bottom: 100%;
+
+        @include mobileLandscape {
+            border-radius: .4vw;
+            padding: .53vw .66vw;
+            font-size: 1vw;
+            left: 100%;
+            bottom: 100%;
         }
     }
 }
@@ -127,5 +154,34 @@
             width: 2.49vw;
             height: 2.49vw;
         }
+    }
+}
+
+/* ====================================================ANIMATIONS =========================================================*/
+
+.messageAppear {
+    animation: showCopiedMessage 1s forwards;
+}
+
+@keyframes showCopiedMessage {
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.messageDisppear {
+    animation: vanishCopiedMessage 1s forwards;
+}
+
+@keyframes vanishCopiedMessage {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
     }
 }
