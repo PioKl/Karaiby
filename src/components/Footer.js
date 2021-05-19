@@ -7,6 +7,14 @@ import { ReactComponent as Facebook } from "../svg/facebook.svg";
 import { ReactComponent as Twitter } from "../svg/twitter.svg";
 import { ReactComponent as Mail } from '../svg/iconMail.svg';
 const Footer = () => {
+
+    const handleCopy = () => {
+        const skopiowany = document.querySelector(".footerMail__copiedMessage")
+        setTimeout(() => skopiowany.classList.add("messageAppear"), 100);
+        setTimeout(() => skopiowany.classList.add("messageDisppear"), 1000);
+        setTimeout(() => skopiowany.classList.remove("messageAppear", "messageDisppear"), 1900);
+    }
+
     return (
         <div id="contact" className="footer">
             <div className="footer__container">
@@ -17,7 +25,8 @@ const Footer = () => {
                 </picture>
                 <div className="footerMail">
                     <Mail className="footerMail__icon" />
-                    <p onClick={(e) => { navigator.clipboard.writeText(e.target.innerText) }} className="footerMail__emailAdress">travel@gmail.com</p>
+                    <p onClick={(e) => { navigator.clipboard.writeText(e.target.innerText); handleCopy() }} className="footerMail__emailAdress">travel@gmail.com</p>
+                    <span className="footerMail__copiedMessage">Skopiowano</span>
                 </div>
                 <div className="footerSocial">
                     <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><InstagramAlternate className="footerSocial__icon" /></a>
