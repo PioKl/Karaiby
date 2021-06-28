@@ -4,13 +4,6 @@ Do zrobienia:
 - Dodanie zdjęć w formacie webp w celu zmniejszenia ich wagi (pliki png są nadal, w razie gdyby przeglądarka nie obsługiwała webp) (zrobione +)
 - Dodanie "loadera" w celu załadowania wszystkich zdjęć, zanim użytkownik dostanie się na stronę (zrobione +)
 - W niektórych przypadkach lepiej przejść z vh,vw na responsive fluid typography (robionego metodą calc z minimalną i maksymalną wartością). Zapewnia większą pewność, że elementy będą bardzo dobrze wyglądały na urządzeniach o nietypowych rozdzielczościach (zrobione +)
-- Poprawki w kodzie
-- Usunięcie niepotrzebnego kodu
-- Usunięcie drobnych bugów
-- Usunięcie placeholderowych zdjęć w Warto Zobaczyć i dodanie nowych zdjęć/map regionów do poszczególnych miejsc, a także linków prowadzących do poszerzenia wiedzy o regionie (zrobione +, jeszcze tylko linki)
-- Dodać przycisk powrotu na początek strony (zrobione +)
-- Kilka poprawek w wyglądzie
-- Ewentualne dodanie rzeczywistych opisów
 
 
 
